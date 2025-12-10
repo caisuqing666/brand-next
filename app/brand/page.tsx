@@ -16,6 +16,17 @@ export default function BrandHome() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (menuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [menuOpen]);
+
   const closeMenu = () => setMenuOpen(false);
 
   return (
@@ -49,6 +60,7 @@ export default function BrandHome() {
             <Link href="/brand/resources" className="nav-link">资源库</Link>
           </div>
         </div>
+        <div className={`mobile-menu-layer ${menuOpen ? 'open' : ''}`} onClick={closeMenu} />
         <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
           <Link href="/brand" className="mobile-link" onClick={closeMenu}>首页</Link>
           <Link href="/brand/psychology" className="mobile-link" onClick={closeMenu}>心理服务</Link>
