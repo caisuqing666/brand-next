@@ -1,5 +1,6 @@
 // app/layout.tsx
 import type { Metadata } from 'next';
+import './brand.css';
 
 export const metadata: Metadata = {
   title: 'Brand Next',
