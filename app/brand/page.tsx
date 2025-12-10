@@ -6,6 +6,7 @@ import './brand.css';
 
 export default function BrandHome() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -14,6 +15,8 @@ export default function BrandHome() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const closeMenu = () => setMenuOpen(false);
 
   return (
     <div className="brand-container">
@@ -28,6 +31,16 @@ export default function BrandHome() {
             </svg>
             <span>蔡蔡的小宇宙</span>
           </div>
+          <button
+            className="mobile-menu-toggle"
+            aria-label="展开导航"
+            aria-expanded={menuOpen}
+            onClick={() => setMenuOpen((open) => !open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
           <div className="nav-links">
             <Link href="/brand" className="nav-link active">首页</Link>
             <Link href="/brand/psychology" className="nav-link">心理服务</Link>
@@ -35,6 +48,13 @@ export default function BrandHome() {
             <Link href="/brand/ai-lab" className="nav-link">AI实验室</Link>
             <Link href="/brand/resources" className="nav-link">资源库</Link>
           </div>
+        </div>
+        <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+          <Link href="/brand" className="mobile-link" onClick={closeMenu}>首页</Link>
+          <Link href="/brand/psychology" className="mobile-link" onClick={closeMenu}>心理服务</Link>
+          <Link href="/brand/growth" className="mobile-link" onClick={closeMenu}>成长之路</Link>
+          <Link href="/brand/ai-lab" className="mobile-link" onClick={closeMenu}>AI实验室</Link>
+          <Link href="/brand/resources" className="mobile-link" onClick={closeMenu}>资源库</Link>
         </div>
       </nav>
 
