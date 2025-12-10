@@ -49,6 +49,11 @@ my-site/
 │   ├── components/     # 共享组件
 │   └── page.tsx        # 首页
 ├── lib/                # 工具函数
+│   ├── supabaseClient.ts      # Supabase 客户端配置
+│   └── supabase-examples.ts   # Supabase 使用示例
+├── app/
+│   └── api/
+│       └── supabase-test/     # Supabase 连接测试 API
 └── public/             # 静态资源
 ```
 
@@ -57,16 +62,39 @@ my-site/
 - **Next.js 15** - React 框架
 - **TypeScript** - 类型安全
 - **Tailwind CSS** - 样式框架
-- **Supabase** - 后端服务（如需要）
+- **Supabase** - 后端数据库和认证服务
 
-## 📝 环境变量
+## 📝 环境变量配置
 
-创建 `.env.local` 文件（已排除在 git 中）：
+### Supabase 数据库连接
+
+1. **复制环境变量模板**：
+   ```bash
+   cp env.example .env.local
+   ```
+
+2. **获取 Supabase 凭证**：
+   - 登录 [Supabase Dashboard](https://app.supabase.com)
+   - 选择你的项目（或创建新项目）
+   - 进入 **Settings** → **API**
+   - 复制以下信息到 `.env.local`：
+     - **Project URL** → `NEXT_PUBLIC_SUPABASE_URL`
+     - **anon/public key** → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+     - **service_role key** → `SUPABASE_SERVICE_ROLE_KEY`（可选，仅用于服务端高权限操作）
+
+3. **测试连接**：
+   - 启动开发服务器：`npm run dev`
+   - 访问 `http://localhost:3000/api/supabase-test` 查看连接状态
+
+详细配置说明请查看 [SUPABASE_SETUP.md](./SUPABASE_SETUP.md)
+
+### 环境变量文件示例
 
 ```env
-# Supabase 配置（如需要）
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
+# Supabase 配置
+NEXT_PUBLIC_SUPABASE_URL=https://your-project-id.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
+SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here  # 可选
 ```
 
 ## 🌟 页面说明
