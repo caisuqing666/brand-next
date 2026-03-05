@@ -126,7 +126,7 @@ export default function Home() {
           <Link href="/garden/review" className="garden-node">
             <h3 className="node-title">复盘沉淀</h3>
             <p className="node-question">把经历变成结构，把结构变成复利。</p>
-            <div className="node-meta">花园</div>
+            <div className="node-meta">复盘沉淀</div>
           </Link>
 
           <Link href="/practice/running" className="garden-node">
