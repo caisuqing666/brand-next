@@ -6,14 +6,19 @@
   --bg-cream-soft: #f6ecdf;
   --bg-cream-deep: #eedfce;
   
+  /* 文字主色 */
+  --text-main: #2d2d2d;
+
   /* 结构色：石墨/矿物 */
   --structure: #2f251f;
   --structure-soft: #4d4036;
   --structure-muted: #7a695b;
   
-  /* 强调色（暂不启用） */
-  --accent: #8b7355;
-  --accent-soft: #a69078;
+  /* slowroot 墨紫 Accent */
+  --accent: #5f57c6;
+  --accent-on-light: #4b439f;
+  --accent-hover-light: #544bc0;
+  --accent-soft: #544bc0;
   
   /* 边框与卡片 */
   --border: rgba(139, 115, 85, 0.25);
@@ -42,7 +47,7 @@ body {
     radial-gradient(45% 45% at 82% 12%, rgba(139, 115, 85, 0.06), transparent 45%),
     linear-gradient(120deg, var(--bg-cream) 0%, var(--bg-cream-soft) 45%, var(--bg-cream-deep) 100%);
   background-attachment: fixed;
-  color: var(--structure);
+  color: var(--text-main);
   line-height: 1.7;
   letter-spacing: 0.01em;
   min-height: 100vh;
@@ -102,16 +107,19 @@ body::before {
 }
 
 .nav-link {
-  color: var(--structure-soft);
+  color: var(--accent-on-light);
   text-decoration: none;
   font-size: 0.95rem;
   font-weight: 500;
   transition: color 0.2s;
 }
 
-.nav-link:hover,
+.nav-link:hover {
+  color: var(--accent-hover-light);
+}
+
 .nav-link.active {
-  color: var(--structure);
+  color: var(--accent-on-light);
 }
 
 /* Hero */
@@ -176,7 +184,7 @@ body::before {
 .entry-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 16px 40px var(--shadow);
-  border-color: var(--accent-soft);
+  border-color: var(--accent-hover-light);
 }
 
 .entry-icon {
@@ -211,7 +219,11 @@ body::before {
   display: block;
   margin-top: 1rem;
   font-size: 0.9rem;
-  color: var(--accent);
+  color: var(--accent-on-light);
+}
+
+.entry-tool:hover {
+  color: var(--accent-hover-light);
 }
 
 /* 证据组件 */
@@ -301,7 +313,7 @@ body::before {
 }
 
 .garden-node:hover {
-  border-color: var(--accent-soft);
+  border-color: var(--accent-hover-light);
   transform: translateY(-2px);
 }
 
