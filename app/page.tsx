@@ -55,8 +55,8 @@ export default function Home() {
             <div className="entry-icon">🧭</div>
             <h2 className="entry-title">判断 / 方向</h2>
             <p className="entry-question">"我怎么知道这是对的方向？"</p>
-            <span className="entry-ability">清晰</span>
-            <span className="entry-tool">→ Gallup 判断</span>
+            <span className="entry-ability">判断</span>
+            <span className="entry-tool">→ 判断之锚</span>
           </Link>
         </div>
       </section>
