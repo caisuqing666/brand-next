@@ -2,6 +2,13 @@ import Link from 'next/link';
 
 const gardenNodes = [
   {
+    title: '临在归位',
+    slug: 'presence',
+    question: '如何在判断之前，先把自己放回当下？',
+    category: 'garden',
+    updated: '2026-03-05'
+  },
+  {
     title: '判断优先',
     slug: 'judgment',
     question: '如何在复杂中做出清晰判断？',
@@ -9,56 +16,10 @@ const gardenNodes = [
     updated: '2026-03-05'
   },
   {
-    title: '结构优先',
-    slug: 'structure',
-    question: '如何搭建可持续的结构？',
+    title: '执行边界',
+    slug: 'action',
+    question: '如何把判断转成可执行、可完成的动作？',
     category: 'garden',
-    updated: '2026-03-05'
-  },
-  {
-    title: '慢生长',
-    slug: 'slow-growth',
-    question: '什么值得慢慢长？',
-    category: 'garden',
-    updated: '2026-03-05'
-  },
-  {
-    title: '随笔',
-    slug: 'notes',
-    question: '碎片化思考与观察',
-    category: 'garden',
-    updated: '2026-03-05'
-  },
-  {
-    title: '跑步哲学',
-    slug: 'running',
-    question: '如何用身体建立稳定地基？',
-    category: 'practice',
-    path: '/practice/running',
-    updated: '2026-03-05'
-  },
-  {
-    title: '编程学习',
-    slug: 'coding',
-    question: '46岁学编程，学的是什么？',
-    category: 'practice',
-    path: '/practice/coding',
-    updated: '2026-03-05'
-  },
-  {
-    title: '投资结构',
-    slug: 'investing',
-    question: '如何建立长期投资结构？',
-    category: 'practice',
-    path: '/practice/investing',
-    updated: '2026-03-05'
-  },
-  {
-    title: '生活实验',
-    slug: 'life',
-    question: '如何设计可持续的生活节奏？',
-    category: 'practice',
-    path: '/practice/life',
     updated: '2026-03-05'
   },
   {
@@ -66,28 +27,6 @@ const gardenNodes = [
     slug: 'review',
     question: '如何让经验变成可复用的资产？',
     category: 'garden',
-    updated: '2026-03-05'
-  },
-  {
-    title: '每日三件',
-    slug: 'daily-three',
-    question: '如何用最小行动推进长期目标？',
-    category: 'garden',
-    updated: '2026-03-05'
-  },
-  {
-    title: '信息降噪',
-    slug: 'noise-reduction',
-    question: '如何在信息过载中保持清醒？',
-    category: 'garden',
-    updated: '2026-03-05'
-  },
-  {
-    title: '盖洛普优势',
-    slug: 'gallup',
-    question: '如何用优势语言做判断？',
-    category: 'tools',
-    path: '/tools/gallup',
     updated: '2026-03-05'
   },
 ];
