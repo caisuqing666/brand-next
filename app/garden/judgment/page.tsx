@@ -1,23 +1,5 @@
 import Link from 'next/link';
 
-const judgmentNodes = [
-  {
-    title: '节点占位：事实与解释',
-    slug: 'placeholder-fact',
-    question: '先区分事实与解释，再做方向判断。',
-  },
-  {
-    title: '节点占位：优先级裁剪',
-    slug: 'placeholder-priority',
-    question: '什么要做，什么先不做？',
-  },
-  {
-    title: '节点占位：风险预判',
-    slug: 'placeholder-risk',
-    question: '关键风险在哪里，如何提前设防？',
-  },
-];
-
 export default function JudgmentPage() {
   return (
     <div className="slowroot-container">
@@ -36,20 +18,33 @@ export default function JudgmentPage() {
 
       <div className="page-container">
         <header className="page-header">
-          <h1 className="page-title">判断方向</h1>
-          <p className="hero-subtitle">
-            先判断，再行动。用事实、边界和优先级确定当下最重要的一步。
-          </p>
+          <h1 className="page-title">判断入口</h1>
+          <p className="hero-subtitle">在复杂里先看清结构，再决定下一步。</p>
         </header>
 
         <section className="garden-section">
           <div className="garden-grid">
-            {judgmentNodes.map((node) => (
-              <div key={node.slug} className="garden-node">
-                <h3 className="node-title">{node.title}</h3>
-                <p className="node-question">{node.question}</p>
-              </div>
-            ))}
+            <article className="garden-node">
+              <h2 className="node-title">问题态</h2>
+              <p className="node-question">如何在复杂中做出清晰判断？信息、意见与情绪同时涌来时，最常见的偏差是把解释当事实，把紧急当重要。</p>
+
+              <h2 className="node-title">三条结构规则</h2>
+              <ol className="node-question">
+                <li>先区分事实与解释：先写可验证发生了什么，再写自己如何理解。</li>
+                <li>用边界筛选优先级：按角色、时间、资源边界过滤，只保留当前承担得起且影响最大的事项。</li>
+                <li>时间验证方向：给判断设置最小观察周期，用结果决定继续、调整或停止。</li>
+              </ol>
+
+              <h2 className="node-title">证据链接</h2>
+              <p className="node-question">
+                参见
+                <Link href="/about/system"> /about/system </Link>
+                获取系统地图。
+              </p>
+
+              <h2 className="node-title">最小行动</h2>
+              <p className="node-question">现在选择一件今天要做的事，按这三条规则过一遍，再开始执行。</p>
+            </article>
           </div>
         </section>
       </div>
