@@ -1,74 +1,15 @@
 'use client';
 
-import { useEffect, useState } from 'react';
 import Link from 'next/link';
+import BrandNav from './components/BrandNav';
 import './brand.css';
 
 export default function BrandHome() {
-  const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-    }
-    return () => {
-      document.body.style.overflow = '';
-    };
-  }, [menuOpen]);
-
-  const closeMenu = () => setMenuOpen(false);
 
   return (
     <div className="brand-container">
       {/* 导航栏 */}
-      <nav className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
-        <div className="nav-container">
-          <div className="nav-logo">
-            <svg className="logo-icon" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" fill="none"/>
-              <path d="M30 50 L50 30 L70 50" stroke="currentColor" strokeWidth="2" fill="none"/>
-              <path d="M30 50 Q50 70 70 50" stroke="currentColor" strokeWidth="2" fill="none"/>
-            </svg>
-            <span>蔡蔡的小宇宙</span>
-          </div>
-          <button
-            className="mobile-menu-toggle"
-            aria-label="展开导航"
-            aria-expanded={menuOpen}
-            onClick={() => setMenuOpen((open) => !open)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
-          <div className="nav-links">
-            <Link href="/brand" className="nav-link active">首页</Link>
-            <Link href="/brand/psychology" className="nav-link">心理服务</Link>
-            <Link href="/brand/growth" className="nav-link">成长之路</Link>
-            <Link href="/brand/ai-lab" className="nav-link">AI实验室</Link>
-            <Link href="/brand/resources" className="nav-link">资源库</Link>
-          </div>
-        </div>
-        <div className={`mobile-menu-layer ${menuOpen ? 'open' : ''}`} onClick={closeMenu} />
-        <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
-          <Link href="/brand" className="mobile-link" onClick={closeMenu}>首页</Link>
-          <Link href="/brand/psychology" className="mobile-link" onClick={closeMenu}>心理服务</Link>
-          <Link href="/brand/growth" className="mobile-link" onClick={closeMenu}>成长之路</Link>
-          <Link href="/brand/ai-lab" className="mobile-link" onClick={closeMenu}>AI实验室</Link>
-          <Link href="/brand/resources" className="mobile-link" onClick={closeMenu}>资源库</Link>
-        </div>
-      </nav>
+      <BrandNav active="home" enableScrollShadow />
 
       {/* 首页背景动画 */}
       <div className="home-background">
@@ -100,16 +41,16 @@ export default function BrandHome() {
         <section className="hero-section brand-hero">
           <h1 className="hero-title">
             你好，我是蔡蔡。
-            <span className="hero-subtitle">
-              一个用跑步、写作和技术，慢慢长成自己的人。
-            </span>
           </h1>
+          <p className="hero-subtitle">slowroot —— 慢，是节奏；根，是结构。</p>
           <p className="hero-lede">
-            在这个小小宇宙里，我用脚步走路，用文字记录，用代码搭建房子。<br />
-            不追求完美，只追求真实、温柔、长期主义。
+            这里是 slowroot.cc——一个关于结构、判断与慢生长的个人实验场。记录一个人如何在 40+ 之后，重新搭建自己。
+          </p>
+          <p className="hero-lede">
+            在信息越来越多的时代，我更在意的是——怎么判断，而不是怎么做更多。这里记录我在三个方向上的长期实践。慢，但有根。
           </p>
           <div className="hero-pill-row">
-            <span className="pill">洞察与温柔的行动者</span>
+            <span className="pill">结构实践者</span>
             <span className="pill">跑步 10,000+ 公里</span>
             <span className="pill">46 岁写下第一行代码</span>
           </div>
@@ -206,7 +147,7 @@ export default function BrandHome() {
               <div className="timeline-card">
                 <div className="timeline-year">2025 年 · 第一次写代码</div>
                 <p className="timeline-content">
-                  46 岁打开编辑器，写下人生第一个 console.log('Hello')。那一刻我意识到：人生的好多“不可能”，只是我们太早放弃。
+                  46 岁打开编辑器，写下第一个 console.log('Hello')。那不是技术突破，而是认知突破。我不是为了会写代码，我是在拆掉“年龄限制”的幻觉。
                 </p>
               </div>
             </div>
@@ -225,36 +166,25 @@ export default function BrandHome() {
         {/* 我正在做的事 */}
         <section className="section-shell focus-section">
           <div className="section-header">
-            <p className="eyebrow">💫 我正在做的事</p>
-            <h2 className="section-title">写作、实验、陪伴，都是温柔的力量</h2>
+            <p className="eyebrow">💫</p>
+            <h2 className="section-title">我在做的三件事</h2>
+            <p className="card-content">认知决定方向，能力决定路径，训练决定稳定性。</p>
           </div>
           <div className="focus-grid">
             <div className="dynamic-card focus-card">
               <div className="card-icon">①</div>
-              <h3 className="card-title">心理支持与情绪陪伴</h3>
-              <ul className="focus-list">
-                <li>关注中年女性的压力、情绪和自我价值感</li>
-                <li>通过文字、工具和课程，帮你多一点自我理解、少一点自我苛责</li>
-                <li>希望未来能提供更系统的心理支持服务</li>
-              </ul>
+              <h3 className="card-title">认知结构</h3>
+              <p className="card-content">理解世界的底层逻辑，比追逐表面信息更重要。</p>
             </div>
             <div className="dynamic-card focus-card">
               <div className="card-icon">②</div>
-              <h3 className="card-title">跑步 × 成长记录体系</h3>
-              <ul className="focus-list">
-                <li>用跑步，把“坚持”这件事拆成一公里一公里</li>
-                <li>把训练、情绪、生活状态记录下来，变成可回看的成长轨迹</li>
-                <li>正在打造属于自己的跑步日记系统和成长工具</li>
-              </ul>
+              <h3 className="card-title">技术能力</h3>
+              <p className="card-content">把想法变成可用的东西。46 岁开始，没有太晚。</p>
             </div>
             <div className="dynamic-card focus-card">
               <div className="card-icon">③</div>
-              <h3 className="card-title">AI 实验室与个人产品</h3>
-              <ul className="focus-list">
-                <li>学习 Python、NLP、全栈开发，把技术用在真实的问题上</li>
-                <li>做情绪追踪、习惯养成、目标拆解等小工具</li>
-                <li>这个网站，就是我「从 0 到 1」的第一个正式产品</li>
-              </ul>
+              <h3 className="card-title">自我训练</h3>
+              <p className="card-content">在身体里找到稳定的地基，然后从那里出发。</p>
             </div>
           </div>
         </section>
@@ -266,10 +196,9 @@ export default function BrandHome() {
             <h2 className="section-title">温柔又坚定的成长信念</h2>
           </div>
           <div className="belief-list">
-            <div className="belief-item">成长不等于变得强硬，而是变得温柔又有边界。</div>
-            <div className="belief-item">行动不需要完美准备，80 分的持续，比 100 分的一次性更重要。</div>
-            <div className="belief-item">跑步、写作、学习技术，都是在练习同一件事：不放弃自己。</div>
-            <div className="belief-item">中年不是结束，而是一个更诚实地过人生的新起点。</div>
+            <div className="belief-item">没有结构，技巧会误导你。</div>
+            <div className="belief-item">没有判断，工具会放大错误。</div>
+            <div className="belief-item">没有节奏，速度只会让你更快迷失。</div>
           </div>
         </section>
 
@@ -277,26 +206,16 @@ export default function BrandHome() {
         <section className="section-shell closing-section">
           <div className="closing-card">
             <p className="eyebrow">💌 想对你说的一句话</p>
-            <h3>如果你也在中年的生活里感到疲惫、迷茫、却又不甘心，欢迎来这里坐坐。</h3>
-            <p className="card-content">
-              你不需要马上变好，只需要先被好好看见。我们可以一起走一段路，慢慢找到自己的节奏。
+            <p className="card-content">我不确定它会长成什么。但我会持续构建。</p>
+            <p className="card-content" style={{ opacity: 0.5, fontSize: '0.9em', marginTop: '1.5rem' }}>
+              森林不追求速度。它在时间里，确认自己的方向。
             </p>
             <div className="closing-actions">
-              <Link href="/brand/growth" className="closing-btn primary">了解我的成长故事</Link>
-              <Link href="/brand/ai-lab" className="closing-btn ghost">去看看我的 AI 实验室</Link>
+              <Link href="/tools" className="closing-btn primary">欢迎进来看看</Link>
             </div>
           </div>
         </section>
       </main>
-
-      {/* 悬浮预约按钮 */}
-      <Link href="/brand/psychology#consultation-form" className="floating-booking-btn">
-        <span>想聊聊吗？</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-          <path d="M5 12h14M12 5l7 7-7 7"/>
-        </svg>
-      </Link>
     </div>
   );
 }
-

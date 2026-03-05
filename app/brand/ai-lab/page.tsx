@@ -1,30 +1,12 @@
 'use client';
 
-import Link from 'next/link';
+import BrandNav from '../components/BrandNav';
 import '../../brand.css';
 
 export default function AILabPage() {
   return (
     <div className="brand-container">
-      <nav className="navbar navbar-scrolled">
-        <div className="nav-container">
-          <div className="nav-logo">
-            <svg className="logo-icon" viewBox="0 0 100 100" fill="none">
-              <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" fill="none"/>
-              <path d="M30 50 L50 30 L70 50" stroke="currentColor" strokeWidth="2" fill="none"/>
-              <path d="M30 50 Q50 70 70 50" stroke="currentColor" strokeWidth="2" fill="none"/>
-            </svg>
-            <span>蔡蔡的小宇宙</span>
-          </div>
-          <div className="nav-links">
-            <Link href="/brand" className="nav-link">首页</Link>
-            <Link href="/brand/psychology" className="nav-link">心理服务</Link>
-            <Link href="/brand/growth" className="nav-link">成长之路</Link>
-            <Link href="/brand/ai-lab" className="nav-link active">AI实验室</Link>
-            <Link href="/brand/resources" className="nav-link">资源库</Link>
-          </div>
-        </div>
-      </nav>
+      <BrandNav active="code" />
 
       <main className="page-main">
         <section className="page-hero">
@@ -222,6 +204,8 @@ outputs = model(**inputs)`}</code></pre>
     </div>
   );
 }
+
+
 
 
 

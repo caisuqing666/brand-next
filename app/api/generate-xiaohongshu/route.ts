@@ -1,7 +1,4 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { createCanvas, loadImage, registerFont } from 'canvas';
-import path from 'path';
-import fs from 'fs';
 
 // 品牌颜色定义 - 参照 brand-next 风格
 const COLORS = {
@@ -116,6 +113,20 @@ function wrapText(
 export async function POST(request: NextRequest) {
   try {
     const { title, subtitle, content, type, images = [], backgroundImage } = await request.json();
+
+    let createCanvas: typeof import('canvas')['createCanvas'];
+    let loadImage: typeof import('canvas')['loadImage'];
+    try {
+      const canvasModule = await import('canvas');
+      createCanvas = canvasModule.createCanvas;
+      loadImage = canvasModule.loadImage;
+    } catch (error) {
+      console.error('canvas 模块加载失败:', error);
+      return NextResponse.json(
+        { error: '图像服务依赖未就绪，请先安装并编译 canvas 原生依赖。' },
+        { status: 500 }
+      );
+    }
 
     // 封面模式必须有标题，内页模式必须有标题或内容
     if (type === 'cover' && !title) {
@@ -733,4 +744,3 @@ export async function POST(request: NextRequest) {
     );
   }
 }
-

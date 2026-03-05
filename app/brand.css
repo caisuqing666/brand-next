@@ -549,6 +549,82 @@
   height: 20px;
 }
 
+/* 标签筛选 */
+.tag-filter {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.tag-filter-title {
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.tag-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tag-chip {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 253, 248, 0.82);
+  color: var(--color-text-primary);
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.tag-chip:hover {
+  border-color: rgba(195, 155, 123, 0.6);
+  box-shadow: 0 8px 18px rgba(108, 82, 64, 0.1);
+}
+
+.tag-chip.active {
+  background: rgba(195, 155, 123, 0.14);
+  border-color: rgba(195, 155, 123, 0.7);
+  color: var(--color-text-primary);
+}
+
+.tag-chip.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.filter-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.filter-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  min-width: 160px;
+}
+
+.filter-control label {
+  font-weight: 600;
+  color: var(--color-text-secondary);
+}
+
+.filter-select {
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background: rgba(255, 253, 248, 0.9);
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+}
+
 @keyframes pulse-btn {
  0%, 100% {
    box-shadow: 0 4px 16px var(--color-shadow);

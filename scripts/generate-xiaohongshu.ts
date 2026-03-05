@@ -136,3 +136,7 @@ if (!fs.existsSync(outputDir)) {
 const outputPath = path.join(outputDir, 'xiaohongshu-content.png');
 generateImage(content, outputPath);
 
+
+
+
+

@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 const nextConfig: NextConfig = {
   /* config options here */
   reactStrictMode: true,
+  outputFileTracingRoot: process.cwd(),
   eslint: {
     // 在构建时忽略 ESLint 错误（临时措施，建议后续修复再改回）
     ignoreDuringBuilds: true,
