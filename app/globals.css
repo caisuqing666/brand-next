@@ -136,14 +136,18 @@ body::before {
   line-height: 1.8;
 }
 
-/* 公开样本提示 - 更轻一档：更小/更淡/更松 */
+/* 公开样本提示 - 小优化：左对齐 + 更落地 */
 .sample-note {
-  display: block;
+  display: inline-block;
   font-size: 0.75rem;
   color: var(--structure-muted);
   opacity: 0.45;
   margin-top: 2rem;
   letter-spacing: 0.02em;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.4rem 0.6rem;
+  background: rgba(255, 253, 248, 0.6);
 }
 
 /* 三入口卡片 */

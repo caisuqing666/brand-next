@@ -61,7 +61,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 证据组件 */}
+      {/* 证据组件 - 必改项1: 月里程 → 累计里程 */}
       <section className="evidence-section">
         <div className="evidence-header">
           <span className="evidence-eyebrow">📊 周更数据</span>
@@ -69,7 +69,7 @@ export default function Home() {
         <div className="evidence-grid">
           <div className="evidence-card">
             <div className="evidence-value">10,000+</div>
-            <div className="evidence-label">月里程（公里）</div>
+            <div className="evidence-label">累计里程（公里）</div>
             <div className="evidence-note">恒：持续奔跑</div>
           </div>
           <div className="evidence-card">
@@ -85,7 +85,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 花园入口 */}
+      {/* 花园入口 - 必改项2: 首页预览只显示分区标签，不显示更新日期 */}
       <section className="garden-section">
         <div className="garden-header">
           <h2 className="garden-title">进入花园</h2>
@@ -108,25 +108,25 @@ export default function Home() {
           <Link href="/garden/judgment" className="garden-node">
             <h3 className="node-title">判断优先</h3>
             <p className="node-question">我在解决的是：如何在复杂中做出清晰判断？</p>
-            <div className="node-meta">更新于 2026-03-05</div>
+            <div className="node-meta">核心</div>
           </Link>
 
           <Link href="/garden/structure" className="garden-node">
             <h3 className="node-title">结构优先</h3>
             <p className="node-question">我在解决的是：如何搭建可持续的结构？</p>
-            <div className="node-meta">更新于 2026-03-05</div>
+            <div className="node-meta">核心</div>
           </Link>
 
           <Link href="/garden/slow-growth" className="garden-node">
             <h3 className="node-title">慢生长</h3>
             <p className="node-question">我在解决的是：什么值得慢慢长？</p>
-            <div className="node-meta">更新于 2026-03-05</div>
+            <div className="node-meta">核心</div>
           </Link>
 
           <Link href="/garden/review" className="garden-node">
             <h3 className="node-title">复盘沉淀</h3>
             <p className="node-question">把经历变成结构，把结构变成复利。</p>
-            <div className="node-meta">花园分区</div>
+            <div className="node-meta">分区入口</div>
           </Link>
 
           <Link href="/practice/running" className="garden-node">
