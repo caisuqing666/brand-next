@@ -32,14 +32,14 @@ export default function Home() {
       {/* 三入口卡片 - 顺序调整：临在 → 判断 → 执行 */}
       <section className="entry-cards">
         <div className="entry-grid">
-          {/* 临在 / 降噪 */}
-          <Link href="/tools/presence" className="entry-card">
+          {/* 临在 / 降噪 - 链接到 metafield.cc */}
+          <a href="https://metafield.cc" className="entry-card" target="_blank" rel="noopener noreferrer">
             <div className="entry-icon">🌿</div>
             <h2 className="entry-title">临在 / 降噪</h2>
             <p className="entry-question">"我现在很乱，如何回到自己？"</p>
             <span className="entry-ability">归位</span>
             <span className="entry-tool">→ 临在之锚</span>
-          </Link>
+          </a>
 
           {/* 判断 / 方向 */}
           <Link href="/tools/gallup" className="entry-card">
@@ -85,7 +85,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 花园入口 */}
+      {/* 花园入口 - 首页预览只显示分区标签 */}
       <section className="garden-section">
         <div className="garden-header">
           <h2 className="garden-title">进入花园</h2>
@@ -108,37 +108,37 @@ export default function Home() {
           <Link href="/garden/judgment" className="garden-node">
             <h3 className="node-title">判断优先</h3>
             <p className="node-question">我在解决的是：如何在复杂中做出清晰判断？</p>
-            <div className="node-meta">核心</div>
+            <div className="node-meta">花园</div>
           </Link>
 
           <Link href="/garden/structure" className="garden-node">
             <h3 className="node-title">结构优先</h3>
             <p className="node-question">我在解决的是：如何搭建可持续的结构？</p>
-            <div className="node-meta">核心</div>
+            <div className="node-meta">花园</div>
           </Link>
 
           <Link href="/garden/slow-growth" className="garden-node">
             <h3 className="node-title">慢生长</h3>
             <p className="node-question">我在解决的是：什么值得慢慢长？</p>
-            <div className="node-meta">核心</div>
+            <div className="node-meta">花园</div>
           </Link>
 
           <Link href="/garden/review" className="garden-node">
             <h3 className="node-title">复盘沉淀</h3>
             <p className="node-question">把经历变成结构，把结构变成复利。</p>
-            <div className="node-meta">分区入口</div>
+            <div className="node-meta">花园</div>
           </Link>
 
           <Link href="/practice/running" className="garden-node">
             <h3 className="node-title">跑步哲学</h3>
             <p className="node-question">我在解决的是：如何用身体建立稳定地基？</p>
-            <div className="node-meta">实践 · 跑步</div>
+            <div className="node-meta">实践</div>
           </Link>
 
           <Link href="/practice/coding" className="garden-node">
             <h3 className="node-title">编程学习</h3>
             <p className="node-question">我在解决的是：46岁学编程，学的是什么？</p>
-            <div className="node-meta">实践 · 编程</div>
+            <div className="node-meta">实践</div>
           </Link>
 
           <Link href="/garden" className="garden-node" style={{ 
