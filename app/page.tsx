@@ -29,7 +29,7 @@ export default function Home() {
         <span className="sample-note">这是一份公开样本。</span>
       </section>
 
-      {/* 三入口卡片 */}
+      {/* 三入口卡片 - 顺序调整：临在 → 判断 → 执行 */}
       <section className="entry-cards">
         <div className="entry-grid">
           {/* 临在 / 降噪 */}
@@ -41,15 +41,6 @@ export default function Home() {
             <span className="entry-tool">→ 临在之锚</span>
           </Link>
 
-          {/* 执行 / 最小化 */}
-          <Link href="/tools/endofday" className="entry-card">
-            <div className="entry-icon">⚡</div>
-            <h2 className="entry-title">执行 / 最小化</h2>
-            <p className="entry-question">"我知道方向了，今天怎么做？"</p>
-            <span className="entry-ability">边界</span>
-            <span className="entry-tool">→ EndOfDay</span>
-          </Link>
-
           {/* 判断 / 方向 */}
           <Link href="/tools/gallup" className="entry-card">
             <div className="entry-icon">🧭</div>
@@ -58,10 +49,19 @@ export default function Home() {
             <span className="entry-ability">判断</span>
             <span className="entry-tool">→ 判断之锚</span>
           </Link>
+
+          {/* 执行 / 最小化 */}
+          <Link href="/tools/endofday" className="entry-card">
+            <div className="entry-icon">⚡</div>
+            <h2 className="entry-title">执行 / 最小化</h2>
+            <p className="entry-question">"我知道方向了，今天怎么做？"</p>
+            <span className="entry-ability">边界</span>
+            <span className="entry-tool">→ EndOfDay</span>
+          </Link>
         </div>
       </section>
 
-      {/* 证据组件 - 必改项1: 月里程 → 累计里程 */}
+      {/* 证据组件 */}
       <section className="evidence-section">
         <div className="evidence-header">
           <span className="evidence-eyebrow">📊 周更数据</span>
@@ -85,7 +85,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 花园入口 - 必改项2: 首页预览只显示分区标签，不显示更新日期 */}
+      {/* 花园入口 */}
       <section className="garden-section">
         <div className="garden-header">
           <h2 className="garden-title">进入花园</h2>
