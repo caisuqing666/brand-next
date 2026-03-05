@@ -6,28 +6,24 @@ const gardenNodes = [
     slug: 'presence',
     question: '如何在判断之前，先把自己放回当下？',
     category: 'garden',
-    updated: '2026-03-05'
   },
   {
     title: '判断优先',
     slug: 'judgment',
     question: '如何在复杂中做出清晰判断？',
     category: 'garden',
-    updated: '2026-03-05'
   },
   {
     title: '执行边界',
     slug: 'action',
     question: '如何把判断转成可执行、可完成的动作？',
     category: 'garden',
-    updated: '2026-03-05'
   },
   {
     title: '复盘沉淀',
     slug: 'review',
     question: '如何让经验变成可复用的资产？',
     category: 'garden',
-    updated: '2026-03-05'
   },
 ];
 
@@ -62,15 +58,12 @@ export default function GardenPage() {
             {gardenNodes.map((node) => (
               <Link 
                 key={node.slug}
-                href={node.path || `/garden/${node.slug}`} 
+                href={`/garden/${node.slug}`}
                 className="garden-node"
               >
                 <h3 className="node-title">{node.title}</h3>
                 <p className="node-question">{node.question}</p>
-                <div className="node-meta">
-                  {node.category !== 'garden' && <span>{node.category} · </span>}
-                  {node.updated}
-                </div>
+                <div className="node-meta">{node.category}</div>
               </Link>
             ))}
           </div>
