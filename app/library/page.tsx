@@ -1,30 +1,41 @@
 import Link from 'next/link';
 
-const libraries = [
+const branches = [
   {
-    title: '书与文章',
+    title: 'Reading / 书与文章',
     slug: 'reading',
-    icon: '📚',
-    description: '长期阅读的书与文章',
+    intro: [
+      '这里放的是我读过之后，愿意继续留下来的书与文章。',
+      '不是所有读过的内容都值得保留。真正留下来的，通常不是最热闹的，而是那些会在不同阶段，反复带来提醒和支撑的东西。',
+    ],
+    kept: '它留下的是：内容。',
+    summary: '那些值得一读再读的文字与思想。',
   },
   {
-    title: '工具与方法',
+    title: 'Tools / 工具与方法',
     slug: 'tools',
-    icon: '🛠️',
-    description: '我使用的工具与方法',
+    intro: [
+      '这里放的是我实践过之后，愿意继续留下来的工具与方法。',
+      '它们不一定最新，也不一定最复杂。但它们真的减少过混乱，帮助我做事，也帮助我把一些模糊的感受，慢慢变成可以落地的生活。',
+    ],
+    kept: '它留下的是：方法。',
+    summary: '那些真正进入日常、经得起重复使用的路径。',
   },
   {
-    title: '收藏夹',
+    title: 'Links / 链接与入口',
     slug: 'links',
-    icon: '🔗',
-    description: '值得收藏的链接',
+    intro: [
+      '这里放的是我愿意长期保留的外部入口。',
+      '不是所有链接都值得保存。真正会留下来的，通常不是一时有用的地址，而是那些在需要的时候，能稳定把我带回源头、工具、参考和判断的位置。',
+    ],
+    kept: '它留下的是：入口。',
+    summary: '那些值得反复返回的外部连接点。',
   },
 ];
 
 export default function LibraryPage() {
   return (
     <div className="slowroot-container">
-      {/* 导航栏 */}
       <nav className="navbar">
         <div className="nav-inner">
           <Link href="/" className="nav-logo">slowroot</Link>
@@ -38,33 +49,48 @@ export default function LibraryPage() {
         </div>
       </nav>
 
-      {/* 页面内容 */}
-      <div className="page-container">
-        <header className="page-header">
-          <h1 className="page-title">资源</h1>
-          <p className="hero-subtitle">
-            这里不是"信息仓库"，而是我长期使用的资源。
-          </p>
-        </header>
+      <main className="note-page">
+        <div className="note-shell">
+          <header className="note-head">
+            <div className="note-eyebrow">
+              <span>Library</span>
+              <span className="note-eyebrow-sep">/</span>
+              <span>资源</span>
+            </div>
+            <p className="note-kicker">Library · 资源</p>
+            <h1 className="note-title">资源</h1>
+            <div className="note-intro">
+              <p>我留下这些，不是为了收藏更多。而是因为在一次次使用、阅读、返回之后，它们仍然没有被删掉。</p>
+              <p>有些东西当时有用，过一阵就失效了。有些东西看起来很多，却并不会真正进入生活。</p>
+              <p>我更在意的是：它是否值得留下，是否能在需要的时候，把我带回一个更清楚的位置。</p>
+              <p>这里的内容，不是按数量整理的。而是按时间筛过之后，慢慢留下来的那一部分。</p>
+            </div>
+          </header>
 
-        <section className="entry-cards">
-          <div className="entry-grid">
-            {libraries.map((lib) => (
-              <Link 
-                key={lib.slug}
-                href={`/library/${lib.slug}`} 
-                className="entry-card"
-              >
-                <div className="entry-icon">{lib.icon}</div>
-                <h2 className="entry-title">{lib.title}</h2>
-                <p className="entry-question">{lib.description}</p>
-              </Link>
-            ))}
+          <section className="garden-section">
+            <div className="garden-grid note-section-grid">
+              {branches.map((branch) => (
+                <Link key={branch.slug} href={`/library/${branch.slug}`} className="garden-node note-section-card">
+                  <h2 className="node-title note-section-title">{branch.title}</h2>
+                  <div className="note-section-copy">
+                    {branch.intro.map((paragraph) => (
+                      <p key={paragraph} className="node-question">{paragraph}</p>
+                    ))}
+                  </div>
+                  <p className="note-section-label">{branch.kept}</p>
+                  <p className="node-question">{branch.summary}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
+
+          <div className="note-closing">
+            <p>对我来说，资源不是越多越好。</p>
+            <p>真正有价值的，往往不是新增了什么，而是经过时间之后，还有什么留了下来。</p>
           </div>
-        </section>
-      </div>
+        </div>
+      </main>
 
-      {/* 页脚 */}
       <footer className="footer">
         <p className="footer-text">
           判断优先于行动。结构优先于工具。时间优先于速度。

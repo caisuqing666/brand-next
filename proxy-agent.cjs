@@ -16,7 +16,7 @@ if (!isVercel) {
         undici.setGlobalDispatcher(new undici.ProxyAgent(proxy));
         console.log('[proxy-agent] Using proxy =>', proxy);
       }
-    } catch (err) {
+    } catch {
       // undici 不可用时静默失败（在生产环境中是正常的）
       console.log('[proxy-agent] undici not available, skipping proxy setup');
     }

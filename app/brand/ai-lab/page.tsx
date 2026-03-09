@@ -6,7 +6,7 @@ import '../../brand.css';
 export default function AILabPage() {
   return (
     <div className="brand-container">
-      <BrandNav active="code" />
+      <BrandNav active="archive" />
 
       <main className="page-main">
         <section className="page-hero">
@@ -204,7 +204,6 @@ outputs = model(**inputs)`}</code></pre>
     </div>
   );
 }
-
 
 
 

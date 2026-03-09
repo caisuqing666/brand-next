@@ -7,6 +7,29 @@ import { Suspense, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import '../../brand.css';
 
+const runMetrics = [
+  { title: '本周里程', value: '42.6 km', hint: '目标 50 km · 较上周 +12%' },
+  { title: '平均配速', value: '5′28″/km', hint: '主要区间：Zone 2-3' },
+  { title: '心率分布', value: 'Z2 46% · Z3 38% · Z4 16%', hint: '高强度次数：2' },
+];
+
+const runLogs = [
+  { date: '2025-02-18', distance: '8.2 km', duration: '45:10', pace: '5′30″', mood: '平静', surface: '公园', note: '清晨慢跑，心率稳定', tags: ['标签·恢复', '场景·公园', '情绪·平静'] },
+  { date: '2025-02-17', distance: '6.0 km', duration: '34:42', pace: '5′47″', mood: '轻松', surface: '跑步机', note: '雨天室内，做了 4x800 间歇', tags: ['标签·间歇', '场景·室内', '情绪·轻松'] },
+  { date: '2025-02-16', distance: '14.0 km', duration: '1:19:18', pace: '5′39″', mood: '兴奋', surface: '滨江', note: '长距离拉练，后 3 km 提速', tags: ['标签·长距离', '场景·公园', '情绪·兴奋'] },
+  { date: '2025-02-15', distance: '5.5 km', duration: '31:05', pace: '5′39″', mood: '放松', surface: '社区', note: '恢复跑，注意步频', tags: ['标签·恢复', '场景·社区', '情绪·放松'] },
+];
+
+const runPlans = [
+  { title: '本周训练周期', detail: '3 跑 1 交叉，目标 50 km', status: '进行中' },
+  { title: '下一个赛事', detail: '上海半马 · 3 月，目标 1:58:00', status: '倒计时 24 天' },
+];
+
+const runReviews = [
+  { period: '2025-W07', title: '周复盘', summary: '完成 42.6 km，间歇 + 长距离组合，状态 8/10' },
+  { period: '2025-01', title: '月复盘', summary: '总里程 182 km，5 次力量训练，左膝无不适' },
+];
+
 function RunPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -31,29 +54,6 @@ function RunPageContent() {
     router.replace(query ? `?${query}` : '?', { scroll: false });
   };
 
-  const runMetrics = [
-    { title: '本周里程', value: '42.6 km', hint: '目标 50 km · 较上周 +12%' },
-    { title: '平均配速', value: '5′28″/km', hint: '主要区间：Zone 2-3' },
-    { title: '心率分布', value: 'Z2 46% · Z3 38% · Z4 16%', hint: '高强度次数：2' },
-  ];
-
-  const runLogs = [
-    { date: '2025-02-18', distance: '8.2 km', duration: '45:10', pace: '5′30″', mood: '平静', surface: '公园', note: '清晨慢跑，心率稳定', tags: ['标签·恢复', '场景·公园', '情绪·平静'] },
-    { date: '2025-02-17', distance: '6.0 km', duration: '34:42', pace: '5′47″', mood: '轻松', surface: '跑步机', note: '雨天室内，做了 4x800 间歇', tags: ['标签·间歇', '场景·室内', '情绪·轻松'] },
-    { date: '2025-02-16', distance: '14.0 km', duration: '1:19:18', pace: '5′39″', mood: '兴奋', surface: '滨江', note: '长距离拉练，后 3 km 提速', tags: ['标签·长距离', '场景·公园', '情绪·兴奋'] },
-    { date: '2025-02-15', distance: '5.5 km', duration: '31:05', pace: '5′39″', mood: '放松', surface: '社区', note: '恢复跑，注意步频', tags: ['标签·恢复', '场景·社区', '情绪·放松'] },
-  ];
-
-  const runPlans = [
-    { title: '本周训练周期', detail: '3 跑 1 交叉，目标 50 km', status: '进行中' },
-    { title: '下一个赛事', detail: '上海半马 · 3 月，目标 1:58:00', status: '倒计时 24 天' },
-  ];
-
-  const runReviews = [
-    { period: '2025-W07', title: '周复盘', summary: '完成 42.6 km，间歇 + 长距离组合，状态 8/10' },
-    { period: '2025-01', title: '月复盘', summary: '总里程 182 km，5 次力量训练，左膝无不适' },
-  ];
-
   const filterByRange = useMemo(() => {
     const daysMap: Record<string, number> = { '7d': 7, '30d': 30, '90d': 90 };
     const days = daysMap[range];
@@ -61,7 +61,7 @@ function RunPageContent() {
     const cutoff = new Date();
     cutoff.setDate(cutoff.getDate() - days);
     return runLogs.filter((log) => new Date(log.date) >= cutoff);
-  }, [range, runLogs]);
+  }, [range]);
 
   const filteredLogs = useMemo(() => {
     const hasTags = activeTags.length > 0;

@@ -1,16 +1,18 @@
+import Link from 'next/link';
+
 export default function ReviewWeeklyPage() {
   return (
     <div className="slowroot-container">
       {/* 导航栏 */}
       <nav className="navbar">
         <div className="nav-inner">
-          <a href="/" className="nav-logo">slowroot</a>
+          <Link href="/" className="nav-logo">slowroot</Link>
           <div className="nav-links">
-            <a href="/garden" className="nav-link active">花园</a>
-            <a href="/practice" className="nav-link">实践</a>
-            <a href="/tools" className="nav-link">工具</a>
-            <a href="/library" className="nav-link">资源</a>
-            <a href="/about" className="nav-link">关于</a>
+            <Link href="/garden" className="nav-link active">花园</Link>
+            <Link href="/practice" className="nav-link">实践</Link>
+            <Link href="/tools" className="nav-link">工具</Link>
+            <Link href="/library" className="nav-link">资源</Link>
+            <Link href="/about" className="nav-link">关于</Link>
           </div>
         </div>
       </nav>
@@ -53,7 +55,7 @@ export default function ReviewWeeklyPage() {
               证据
             </h2>
             <p style={{ color: 'var(--structure-soft)' }}>
-              → <a href="/practice/life" style={{ color: 'var(--accent)' }}>周复盘页或周报</a>
+              → <Link href="/practice" style={{ color: 'var(--accent)' }}>周复盘页或周报</Link>
             </p>
           </div>
 
@@ -72,12 +74,12 @@ export default function ReviewWeeklyPage() {
           </div>
 
           <div style={{ marginTop: '2rem' }}>
-            <a href="/garden/review" style={{ 
+            <Link href="/garden/review" style={{ 
               color: 'var(--structure-muted)', 
               textDecoration: 'none' 
             }}>
               ← 返回复盘沉淀
-            </a>
+            </Link>
           </div>
         </section>
       </div>

@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useState } from 'react';
 
 interface ImageItem {
@@ -231,7 +232,7 @@ export default function XiaohongshuGenerator() {
           </div>
 
           {/* 背景图片上传（封面和内页都支持） */}
-          {(type === 'cover' || type === 'content') && (type === 'cover' || type === 'content') && (
+          {(type === 'cover' || type === 'content') && (
             <div style={{ marginBottom: '1.5rem' }}>
               <label style={{ 
                 display: 'block', 
@@ -249,14 +250,18 @@ export default function XiaohongshuGenerator() {
                   overflow: 'hidden',
                   background: 'white',
                 }}>
-                  <img
+                  <Image
                     src={backgroundImage}
                     alt="背景预览"
+                    width={1200}
+                    height={800}
+                    unoptimized
                     style={{
                       width: '100%',
                       maxHeight: '300px',
                       objectFit: 'contain',
                       display: 'block',
+                      height: 'auto',
                     }}
                   />
                   <button
@@ -453,7 +458,7 @@ export default function XiaohongshuGenerator() {
               {/* 已上传的图片预览 */}
               {images.length > 0 && (
                 <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  {images.map((img, index) => {
+                  {images.map((img) => {
                     const paragraphs = content.split('\n').filter(p => p.trim() !== '');
                     const maxPosition = paragraphs.length;
                     return (
@@ -467,9 +472,12 @@ export default function XiaohongshuGenerator() {
                         }}
                       >
                         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-                          <img
+                          <Image
                             src={img.preview}
                             alt="预览"
+                            width={100}
+                            height={100}
+                            unoptimized
                             style={{
                               width: '100px',
                               height: '100px',
@@ -596,4 +604,3 @@ export default function XiaohongshuGenerator() {
     </div>
   );
 }
-

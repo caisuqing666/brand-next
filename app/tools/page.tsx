@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 const tools = [
   {
-    title: 'EndOfDay',
-    slug: 'endofday',
-    icon: '📋',
-    description: '每日三件事',
-    question: '如何用最小行动推进长期目标？',
+    title: '临在之锚',
+    slug: 'presence',
+    icon: '🌿',
+    description: '情绪降噪 / 回归中心',
+    question: '如何回到自己？',
     featured: true,
   },
   {
@@ -18,11 +18,11 @@ const tools = [
     featured: true,
   },
   {
-    title: '临在之锚',
-    slug: 'presence',
-    icon: '🌿',
-    description: '情绪降噪 / 回归中心',
-    question: '如何回到自己？',
+    title: 'EndOfDay',
+    slug: 'endofday',
+    icon: '📋',
+    description: '每日三件事',
+    question: '如何用最小行动推进长期目标？',
     featured: true,
   },
   {
@@ -60,7 +60,7 @@ export default function ToolsPage() {
         <header className="page-header">
           <h1 className="page-title">工具</h1>
           <p className="hero-subtitle">
-            我为自己做的一些工具，如果你也需要，可以用。安静，不营销。
+            我为自己做的一些工具，如果你也需要，可以用。
           </p>
         </header>
 

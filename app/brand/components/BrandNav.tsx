@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
 
-type NavKey = 'home' | 'psychology' | 'run' | 'invest' | 'code' | 'resources' | 'tools';
+type NavKey = 'archive' | 'run' | 'invest' | 'code';
 
 interface BrandNavProps {
   active: NavKey;
@@ -11,13 +11,10 @@ interface BrandNavProps {
 }
 
 const NAV_LINKS: Array<{ key: NavKey; href: string; label: string }> = [
-  { key: 'home', href: '/brand', label: '首页' },
-  { key: 'psychology', href: '/brand/psychology', label: '心理支持' },
+  { key: 'archive', href: '/brand', label: '归档说明' },
   { key: 'run', href: '/brand/run', label: '跑步体系' },
-  { key: 'invest', href: '/brand/invest', label: '投资日志' },
   { key: 'code', href: '/brand/code', label: '编程日志' },
-  { key: 'resources', href: '/brand/resources', label: '资源库' },
-  { key: 'tools', href: '/tools', label: '工具' },
+  { key: 'invest', href: '/brand/invest', label: '投资日志' },
 ];
 
 export default function BrandNav({ active, enableScrollShadow = false }: BrandNavProps) {
@@ -47,7 +44,7 @@ export default function BrandNav({ active, enableScrollShadow = false }: BrandNa
   return (
     <nav className={navbarClass}>
       <div className="nav-container">
-        <div className="nav-logo">
+        <Link href="/" className="nav-logo" onClick={closeMenu}>
           <svg className="logo-icon" viewBox="0 0 100 100" fill="none">
             <circle cx="50" cy="50" r="40" stroke="currentColor" strokeWidth="2" fill="none" />
             <path d="M30 50 L50 30 L70 50" stroke="currentColor" strokeWidth="2" fill="none" />
@@ -55,9 +52,9 @@ export default function BrandNav({ active, enableScrollShadow = false }: BrandNa
           </svg>
           <div style={{ display: 'flex', flexDirection: 'column', lineHeight: 1.25 }}>
             <span>slowroot</span>
-            <span style={{ fontSize: '0.62em', opacity: 0.45, letterSpacing: '0.04em' }}>by 蔡蔡</span>
+            <span style={{ fontSize: '0.62em', opacity: 0.45, letterSpacing: '0.04em' }}>旧版归档区</span>
           </div>
-        </div>
+        </Link>
         <button
           className="mobile-menu-toggle"
           aria-label="展开导航"
@@ -69,6 +66,9 @@ export default function BrandNav({ active, enableScrollShadow = false }: BrandNa
           <span />
         </button>
         <div className="nav-links">
+          <Link href="/" className="nav-link" onClick={closeMenu}>
+            返回主站
+          </Link>
           {NAV_LINKS.map((link) => (
             <Link
               key={link.key}
@@ -82,6 +82,9 @@ export default function BrandNav({ active, enableScrollShadow = false }: BrandNa
       </div>
       <div className={`mobile-menu-layer ${menuOpen ? 'open' : ''}`} onClick={closeMenu} />
       <div className={`mobile-menu ${menuOpen ? 'open' : ''}`}>
+        <Link href="/" className="mobile-link" onClick={closeMenu}>
+          返回主站
+        </Link>
         {NAV_LINKS.map((link) => (
           <Link
             key={link.key}

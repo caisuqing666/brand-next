@@ -1,36 +1,53 @@
 import Link from 'next/link';
 
+const recentNotes = [
+  {
+    slug: 'barbell-and-zhongyong',
+    date: '02-28',
+    title: '我用了十年，才明白这两句话说的是同一件事',
+  },
+  {
+    slug: 'system-processing',
+    date: '02-25',
+    title: '不是情绪处理，是系统处理',
+  },
+  {
+    slug: 'living-with-problems',
+    date: '02-15',
+    title: '带着问题继续走，本身就是能力',
+  },
+];
+
 const gardenNodes = [
   {
     title: '临在归位',
     slug: 'presence',
     question: '如何在判断之前，先把自己放回当下？',
-    category: 'garden',
+    category: '位置',
   },
   {
     title: '判断优先',
     slug: 'judgment',
     question: '如何在复杂中做出清晰判断？',
-    category: 'garden',
+    category: '判断',
   },
   {
     title: '执行边界',
     slug: 'action',
     question: '如何把判断转成可执行、可完成的动作？',
-    category: 'garden',
+    category: '行动',
   },
   {
     title: '复盘沉淀',
     slug: 'review',
     question: '如何让经验变成可复用的资产？',
-    category: 'garden',
+    category: '沉淀',
   },
 ];
 
 export default function GardenPage() {
   return (
     <div className="slowroot-container">
-      {/* 导航栏 */}
       <nav className="navbar">
         <div className="nav-inner">
           <Link href="/" className="nav-logo">slowroot</Link>
@@ -44,33 +61,62 @@ export default function GardenPage() {
         </div>
       </nav>
 
-      {/* 页面内容 */}
-      <div className="page-container">
-        <header className="page-header">
-          <h1 className="page-title">花园</h1>
-          <p className="hero-subtitle">
-            这里是思考的土壤层。不是知识库，而是一个慢慢生长的数字花园。
-          </p>
-        </header>
+      <main className="note-page">
+        <div className="note-shell">
+          <header className="note-head">
+            <div className="note-eyebrow">
+              <span>Garden</span>
+              <span className="note-eyebrow-sep">/</span>
+              <span>花园</span>
+            </div>
+            <p className="note-kicker">Garden · 花园</p>
+            <h1 className="note-title">花园</h1>
+            <div className="note-intro">
+              <p>这里不是为了更快得出答案，而是为了回到一个还能继续生长的位置。</p>
+              <p>有些判断还没有定型，有些结构还在慢慢长出来，有些问题也不会立刻结束。</p>
+              <p>但正是在这里，很多东西开始有了根。</p>
+            </div>
+          </header>
 
-        <section className="garden-section">
-          <div className="garden-grid">
-            {gardenNodes.map((node) => (
-              <Link 
-                key={node.slug}
-                href={`/garden/${node.slug}`}
-                className="garden-node"
-              >
-                <h3 className="node-title">{node.title}</h3>
-                <p className="node-question">{node.question}</p>
-                <div className="node-meta">{node.category}</div>
-              </Link>
-            ))}
-          </div>
-        </section>
-      </div>
+          <section className="garden-section">
+            <div className="garden-grid note-section-grid">
+              {gardenNodes.map((node) => (
+                <Link
+                  key={node.slug}
+                  href={`/garden/${node.slug}`}
+                  className="garden-node note-section-card"
+                >
+                  <h2 className="node-title note-section-title">{node.title}</h2>
+                  <p className="node-question">{node.question}</p>
+                  <p className="note-section-label">这一层处理的是：{node.category}</p>
+                </Link>
+              ))}
+            </div>
+          </section>
 
-      {/* 页脚 */}
+          <section className="garden-section" style={{ marginTop: '2.35rem' }}>
+            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1.25rem' }}>
+              <h2 className="section-label" style={{ fontSize: '0.78rem', letterSpacing: '0.08em', color: 'var(--structure-muted)', opacity: 0.75 }}>最近笔记</h2>
+              <Link href="/garden/notes" style={{ fontSize: '0.82rem', color: 'var(--accent-on-light)', textDecoration: 'none' }}>全部 →</Link>
+            </div>
+            <div className="notes-list">
+              {recentNotes.map((note) => (
+                <Link
+                  key={note.slug}
+                  href={`/garden/notes/${note.slug}`}
+                  className="notes-item"
+                >
+                  <span className="notes-item-date">{note.date}</span>
+                  <span className="notes-item-right">
+                    <span className="notes-item-title">{note.title}</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </section>
+        </div>
+      </main>
+
       <footer className="footer">
         <p className="footer-text">
           判断优先于行动。结构优先于工具。时间优先于速度。

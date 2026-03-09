@@ -76,8 +76,9 @@ function wrapText(
   ctx: any,
   text: string,
   maxWidth: number,
-  lineHeight: number
+  _lineHeight?: number
 ): string[] {
+  void _lineHeight;
   const words = text.split('\n');
   const lines: string[] = [];
   

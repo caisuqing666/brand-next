@@ -25,7 +25,7 @@ export default function PsychologyPage() {
 
   return (
     <div className="brand-container">
-      <BrandNav active="psychology" />
+      <BrandNav active="archive" />
 
       <main className="page-main">
         <section className="page-hero">
@@ -195,7 +195,6 @@ export default function PsychologyPage() {
     </div>
   );
 }
-
 
 
 

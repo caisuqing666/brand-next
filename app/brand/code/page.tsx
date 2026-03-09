@@ -7,6 +7,24 @@ import { Suspense, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import '../../brand.css';
 
+const codeMetrics = [
+  { title: '本周写码时长', value: '12.5 h', hint: '提交 8 次 · 学习 3 主题' },
+  { title: '当前项目', value: '3 个进行中', hint: 'brand-next / mood-tracker / cli-tool' },
+  { title: '今日专注', value: 'AI 观察 & 前端组件', hint: '阅读 2 篇，记录 3 条笔记' },
+];
+
+const codeDiary = [
+  { date: '2025-02-18', project: 'brand-next', topic: '导航组件抽象', time: '3h', blockers: '无', next: '接入假数据列表', tags: ['项目·brand-next', '主题·前端'] },
+  { date: '2025-02-17', project: 'mood-tracker', topic: 'Supabase 表设计', time: '2.5h', blockers: '权限策略待确认', next: '添加 RLS 策略草案', tags: ['项目·mood-tracker', '主题·后端'] },
+  { date: '2025-02-16', project: 'cli-tool', topic: '文件解析', time: '1.8h', blockers: '边缘 case 处理', next: '补充单测', tags: ['项目·cli-tool', '主题·脚本'] },
+];
+
+const codeProjects = [
+  { name: 'brand-next', stack: 'Next.js + Supabase', progress: '60%', status: '进行中', note: '品牌站 + 三大日志' },
+  { name: 'mood-tracker', stack: 'Next.js + Supabase', progress: '30%', status: '探索中', note: '情绪记录与可视化' },
+  { name: 'cli-tool', stack: 'Node.js', progress: '45%', status: '进行中', note: 'Obsidian 同步脚本雏形' },
+];
+
 function CodePageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -31,24 +49,6 @@ function CodePageContent() {
     router.replace(query ? `?${query}` : '?', { scroll: false });
   };
 
-  const codeMetrics = [
-    { title: '本周写码时长', value: '12.5 h', hint: '提交 8 次 · 学习 3 主题' },
-    { title: '当前项目', value: '3 个进行中', hint: 'brand-next / mood-tracker / cli-tool' },
-    { title: '今日专注', value: 'AI 观察 & 前端组件', hint: '阅读 2 篇，记录 3 条笔记' },
-  ];
-
-  const codeDiary = [
-    { date: '2025-02-18', project: 'brand-next', topic: '导航组件抽象', time: '3h', blockers: '无', next: '接入假数据列表', tags: ['项目·brand-next', '主题·前端'] },
-    { date: '2025-02-17', project: 'mood-tracker', topic: 'Supabase 表设计', time: '2.5h', blockers: '权限策略待确认', next: '添加 RLS 策略草案', tags: ['项目·mood-tracker', '主题·后端'] },
-    { date: '2025-02-16', project: 'cli-tool', topic: '文件解析', time: '1.8h', blockers: '边缘 case 处理', next: '补充单测', tags: ['项目·cli-tool', '主题·脚本'] },
-  ];
-
-  const codeProjects = [
-    { name: 'brand-next', stack: 'Next.js + Supabase', progress: '60%', status: '进行中', note: '品牌站 + 三大日志' },
-    { name: 'mood-tracker', stack: 'Next.js + Supabase', progress: '30%', status: '探索中', note: '情绪记录与可视化' },
-    { name: 'cli-tool', stack: 'Node.js', progress: '45%', status: '进行中', note: 'Obsidian 同步脚本雏形' },
-  ];
-
   const filterByRange = useMemo(() => {
     const daysMap: Record<string, number> = { '7d': 7, '30d': 30, '90d': 90 };
     const days = daysMap[range];
@@ -56,7 +56,7 @@ function CodePageContent() {
     const cutoff = new Date();
     cutoff.setDate(cutoff.getDate() - days);
     return codeDiary.filter((entry) => new Date(entry.date) >= cutoff);
-  }, [range, codeDiary]);
+  }, [range]);
 
   const filteredDiary = useMemo(() => {
     const hasTags = activeTags.length > 0;

@@ -1,15 +1,17 @@
+import Link from 'next/link';
+
 export default function ReviewWhyPage() {
   return (
     <div className="slowroot-container">
       <nav className="navbar">
         <div className="nav-inner">
-          <a href="/" className="nav-logo">slowroot</a>
+          <Link href="/" className="nav-logo">slowroot</Link>
           <div className="nav-links">
-            <a href="/garden" className="nav-link active">花园</a>
-            <a href="/practice" className="nav-link">实践</a>
-            <a href="/tools" className="nav-link">工具</a>
-            <a href="/library" className="nav-link">资源</a>
-            <a href="/about" className="nav-link">关于</a>
+            <Link href="/garden" className="nav-link active">花园</Link>
+            <Link href="/practice" className="nav-link">实践</Link>
+            <Link href="/tools" className="nav-link">工具</Link>
+            <Link href="/library" className="nav-link">资源</Link>
+            <Link href="/about" className="nav-link">关于</Link>
           </div>
         </div>
       </nav>
@@ -43,7 +45,7 @@ export default function ReviewWhyPage() {
 
           <div style={{ marginBottom: '2rem' }}>
             <h2 style={{ fontSize: '1.1rem', marginBottom: '0.5rem', color: 'var(--structure)' }}>证据</h2>
-            <p style={{ color: 'var(--structure-soft)' }}>→ <a href="/about/constitution" style={{ color: 'var(--accent)' }}>关键时刻/宪法条款</a></p>
+            <p style={{ color: 'var(--structure-soft)' }}>→ <Link href="/about/system" style={{ color: 'var(--accent)' }}>关键时刻 / 宪法条款</Link></p>
           </div>
 
           <div style={{ background: 'var(--card-bg)', border: '1px solid var(--border)', borderRadius: '12px', padding: '1.5rem' }}>
@@ -52,7 +54,7 @@ export default function ReviewWhyPage() {
           </div>
 
           <div style={{ marginTop: '2rem' }}>
-            <a href="/garden/review" style={{ color: 'var(--structure-muted)', textDecoration: 'none' }}>← 返回复盘沉淀</a>
+            <Link href="/garden/review" style={{ color: 'var(--structure-muted)', textDecoration: 'none' }}>← 返回复盘沉淀</Link>
           </div>
         </section>
       </div>

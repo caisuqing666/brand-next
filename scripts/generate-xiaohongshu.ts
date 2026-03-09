@@ -18,8 +18,9 @@ function wrapText(
   ctx: any,
   text: string,
   maxWidth: number,
-  lineHeight: number
+  _lineHeight?: number
 ): string[] {
+  void _lineHeight;
   const words = text.split('\n');
   const lines: string[] = [];
   
@@ -135,8 +136,5 @@ if (!fs.existsSync(outputDir)) {
 
 const outputPath = path.join(outputDir, 'xiaohongshu-content.png');
 generateImage(content, outputPath);
-
-
-
 
 

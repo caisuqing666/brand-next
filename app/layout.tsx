@@ -1,11 +1,12 @@
 // app/layout.tsx
 import type { Metadata } from 'next';
+import './globals.css';
 import './tailwind.css';
 import './brand.css';
 
 export const metadata: Metadata = {
-  title: 'Brand Next',
-  description: '蔡蔡的 brand-next 网站',
+  title: 'slowroot',
+  description: 'slowroot：一个关于结构、判断与慢生长的个人实验场。',
 };
 
 export default function RootLayout({

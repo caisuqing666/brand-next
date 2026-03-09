@@ -9,7 +9,7 @@ export default function ResourcesPage() {
 
   return (
     <div className="brand-container">
-      <BrandNav active="resources" />
+      <BrandNav active="archive" />
 
       <main className="page-main">
         <section className="page-hero">
@@ -185,7 +185,6 @@ export default function ResourcesPage() {
     </div>
   );
 }
-
 
 
 

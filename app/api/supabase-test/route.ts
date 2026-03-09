@@ -18,7 +18,7 @@ export async function GET() {
     // 测试服务端客户端
     let serverClientTest = null;
     if (hasServiceKey) {
-      const serverClient = createServerClient();
+      createServerClient();
       serverClientTest = {
         connected: true,
         message: '服务端客户端创建成功',
@@ -64,7 +64,6 @@ export async function GET() {
     );
   }
 }
-
 
 
 

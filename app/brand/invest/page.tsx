@@ -7,6 +7,23 @@ import { Suspense, useMemo, useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import '../../brand.css';
 
+const investMetrics = [
+  { title: '近 30 日收益', value: '+3.8%', hint: '最大回撤 -1.2%' },
+  { title: '组合净值', value: '1.124', hint: '基准：沪深 300' },
+  { title: '仓位分布', value: '股 65% / 现 20% / 其他 15%', hint: '集中度最高 18%' },
+];
+
+const tradeTimeline = [
+  { date: '2025-02-18 10:12', symbol: '贵州茅台', direction: '加仓', price: '1743.5', qty: '10', tags: ['消费', '核心', '方向·加仓'] },
+  { date: '2025-02-17 09:45', symbol: '中证红利 ETF', direction: '定投', price: '4.23', qty: '500', tags: ['ETF', '红利', '方向·加仓'] },
+  { date: '2025-02-15 14:05', symbol: '美的集团', direction: '减仓', price: '65.8', qty: '200', tags: ['家电', '风控', '方向·减仓'] },
+];
+
+const investReviews = [
+  { period: '2025-W07', title: '周复盘', summary: '市场震荡，红利低波表现稳健；减少高波动仓位，提升现金占比至 20%。' },
+  { period: '2025-01', title: '月复盘', summary: '总收益 +2.1%，回撤控制良好；需关注科技板块估值回落，暂不追高。' },
+];
+
 function InvestPageContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
@@ -31,23 +48,6 @@ function InvestPageContent() {
     router.replace(query ? `?${query}` : '?', { scroll: false });
   };
 
-  const investMetrics = [
-    { title: '近 30 日收益', value: '+3.8%', hint: '最大回撤 -1.2%' },
-    { title: '组合净值', value: '1.124', hint: '基准：沪深 300' },
-    { title: '仓位分布', value: '股 65% / 现 20% / 其他 15%', hint: '集中度最高 18%' },
-  ];
-
-  const tradeTimeline = [
-    { date: '2025-02-18 10:12', symbol: '贵州茅台', direction: '加仓', price: '1743.5', qty: '10', tags: ['消费', '核心', '方向·加仓'] },
-    { date: '2025-02-17 09:45', symbol: '中证红利 ETF', direction: '定投', price: '4.23', qty: '500', tags: ['ETF', '红利', '方向·加仓'] },
-    { date: '2025-02-15 14:05', symbol: '美的集团', direction: '减仓', price: '65.8', qty: '200', tags: ['家电', '风控', '方向·减仓'] },
-  ];
-
-  const investReviews = [
-    { period: '2025-W07', title: '周复盘', summary: '市场震荡，红利低波表现稳健；减少高波动仓位，提升现金占比至 20%。' },
-    { period: '2025-01', title: '月复盘', summary: '总收益 +2.1%，回撤控制良好；需关注科技板块估值回落，暂不追高。' },
-  ];
-
   const filterByRange = useMemo(() => {
     const daysMap: Record<string, number> = { '7d': 7, '30d': 30, '90d': 90 };
     const days = daysMap[range];
@@ -58,7 +58,7 @@ function InvestPageContent() {
       const date = new Date(trade.date.replace(' ', 'T'));
       return date >= cutoff;
     });
-  }, [range, tradeTimeline]);
+  }, [range]);
 
   const filteredTrades = useMemo(() => {
     const hasTags = activeTags.length > 0;
