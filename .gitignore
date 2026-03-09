@@ -37,3 +37,11 @@ next-env.d.ts
 # generated images
 public/generated/
 
+# local agent/tooling files
+.claude/
+.context-db/
+.mcp.json
+CLAUDE.md
+
+# stale build artifacts
+.next.stale-*/
