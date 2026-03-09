@@ -2,11 +2,12 @@
   "name": "my-site",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "npm@10.9.4",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint . --ignore-pattern '.next/**' --ignore-pattern 'node_modules/**'",
+    "lint": "eslint . --ignore-pattern '.next*/**' --ignore-pattern 'node_modules/**'",
     "test:homepage-layout": "node tests/homepage-layout.test.mjs"
   },
   "dependencies": {
@@ -33,6 +34,6 @@
     "typescript": "^5.0.0"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": "22.x"
   }
 }
