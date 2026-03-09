@@ -22,9 +22,9 @@ export default function Home() {
           从临在到生长的个人系统。
         </h1>
         <div className="hero-meta">
-          <p className="hero-brand">慢，是节奏；根，是结构。</p>
+          <p className="hero-brand">slowroot</p>
           <p className="hero-note">
-            我关心的不是如何做得更多，而是如何先回到自己，并在行动中，长出更稳定的结构。
+            我关心的，不是做得更多，而是先回到自己，再把判断慢慢长进生活里。
           </p>
         </div>
       </section>
@@ -72,47 +72,47 @@ export default function Home() {
           <div className="journey-node journey-node--top journey-node--inner-start">
             <div className="node-number">01</div>
             <h3 className="node-title">临在 / 降噪</h3>
-            <p className="node-question">我现在很乱，如何回到自己？</p>
+            <p className="node-question">乱的时候，怎么先回到自己？</p>
             <a href="https://metafield.cc" className="node-link" target="_blank" rel="noopener noreferrer">
               进入临在之锚 →
             </a>
-            <span className="node-hint">先安静一下</span>
+            <span className="node-hint">先回来</span>
           </div>
 
           <div className="journey-node journey-node--top-right journey-node--inner-guide">
             <div className="node-number">02</div>
             <h3 className="node-title">判断 / 定向</h3>
-            <p className="node-question">我怎么知道这是对的方向？</p>
+            <p className="node-question">站稳以后，怎么判断方向？</p>
             <Link href="/garden/judgment" className="node-link">
               进入判断之锚 →
             </Link>
-            <span className="node-hint">先看清更重要的事</span>
+            <span className="node-hint">先定向</span>
           </div>
 
           <div className="journey-node journey-node--bottom-right journey-node--hinge">
             <div className="node-number">03</div>
             <h3 className="node-title">执行 / 收束</h3>
-            <p className="node-question">方向知道了，今天先收成哪一步？</p>
+            <p className="node-question">知道方向后，今天先做哪一步？</p>
             <a href="https://endofday.site" className="node-link" target="_blank" rel="noopener noreferrer">
               进入执行之锚 →
             </a>
-            <span className="node-hint">先把行动收小一点</span>
+            <span className="node-hint">先收束</span>
           </div>
 
           <div className="journey-node journey-node--bottom-left journey-node--outer-ground">
             <div className="node-number">04</div>
             <h3 className="node-title">结构 / 安放</h3>
-            <p className="node-question">经历过的事，如何安放成结构？</p>
+            <p className="node-question">经历过的事，怎么安放成结构？</p>
             <a href="#rooted" className="node-link">看那些已经开始扎根的部分 →</a>
-            <span className="node-hint">先让经验有位置落地</span>
+            <span className="node-hint">先安放</span>
           </div>
 
           <div className="journey-node journey-node--top-left journey-node--outer-grow">
             <div className="node-number">05</div>
             <h3 className="node-title">生长 / 展开</h3>
-            <p className="node-question">当结构慢慢稳定以后，我会长成什么？</p>
+            <p className="node-question">结构稳定以后，会长成什么？</p>
             <a href="#change" className="node-link">看这些东西如何慢慢长回人身上 →</a>
-            <span className="node-hint">这条路还在慢慢长出来</span>
+            <span className="node-hint">先长出来</span>
           </div>
         </div>
 
@@ -122,11 +122,11 @@ export default function Home() {
               <span className="mobile-number">01</span>
               <h3 className="mobile-title">临在 / 降噪</h3>
             </div>
-            <p className="mobile-question">我现在很乱，如何回到自己？</p>
+            <p className="mobile-question">乱的时候，怎么先回到自己？</p>
             <a href="https://metafield.cc" className="mobile-link" target="_blank" rel="noopener noreferrer">
               进入临在之锚 →
             </a>
-            <span className="mobile-hint">先安静一下</span>
+            <span className="mobile-hint">先回来</span>
           </div>
 
           <div className="mobile-node mobile-node--inner-guide">
@@ -134,11 +134,11 @@ export default function Home() {
               <span className="mobile-number">02</span>
               <h3 className="mobile-title">判断 / 定向</h3>
             </div>
-            <p className="mobile-question">我怎么知道这是对的方向？</p>
+            <p className="mobile-question">站稳以后，怎么判断方向？</p>
             <Link href="/garden/judgment" className="mobile-link">
               进入判断之锚 →
             </Link>
-            <span className="mobile-hint">先看清更重要的事</span>
+            <span className="mobile-hint">先定向</span>
           </div>
 
           <div className="mobile-node mobile-node--hinge">
@@ -146,11 +146,11 @@ export default function Home() {
               <span className="mobile-number">03</span>
               <h3 className="mobile-title">执行 / 收束</h3>
             </div>
-            <p className="mobile-question">方向知道了，今天先收成哪一步？</p>
+            <p className="mobile-question">知道方向后，今天先做哪一步？</p>
             <a href="https://endofday.site" className="mobile-link" target="_blank" rel="noopener noreferrer">
               进入执行之锚 →
             </a>
-            <span className="mobile-hint">先把行动收小一点</span>
+            <span className="mobile-hint">先收束</span>
           </div>
 
           <div className="mobile-node mobile-node--outer-ground">
@@ -158,9 +158,9 @@ export default function Home() {
               <span className="mobile-number">04</span>
               <h3 className="mobile-title">结构 / 安放</h3>
             </div>
-            <p className="mobile-question">经历过的事，如何安放成结构？</p>
+            <p className="mobile-question">经历过的事，怎么安放成结构？</p>
             <a href="#rooted" className="mobile-link">看那些已经开始扎根的部分 →</a>
-            <span className="mobile-hint">先让经验有位置落地</span>
+            <span className="mobile-hint">先安放</span>
           </div>
 
           <div className="mobile-node mobile-node--outer-grow">
@@ -168,9 +168,9 @@ export default function Home() {
               <span className="mobile-number">05</span>
               <h3 className="mobile-title">生长 / 展开</h3>
             </div>
-            <p className="mobile-question">当结构慢慢稳定以后，我会长成什么？</p>
+            <p className="mobile-question">结构稳定以后，会长成什么？</p>
             <a href="#change" className="mobile-link">看这些东西如何慢慢长回人身上 →</a>
-            <span className="mobile-hint">这条路还在慢慢长出来</span>
+            <span className="mobile-hint">先长出来</span>
           </div>
         </div>
       </section>
@@ -186,8 +186,7 @@ export default function Home() {
             <h2 className="section-title">扎根</h2>
             <div className="section-copy">
               <p>想清楚，不是终点。slowroot 也必须进入现实。</p>
-              <p>进入日常。进入行动。进入作品。进入那些可以被看见、被使用、被验证的地方。</p>
-              <p>这里不是成果陈列。这里只放那些已经开始扎根的部分。</p>
+              <p>这里不是成果陈列。这里只放那些已经开始进入现实的部分。</p>
             </div>
           </header>
 
@@ -210,19 +209,19 @@ export default function Home() {
 
             <div className="anchor-actions">
               <Link href="/garden" className="anchor-action anchor-action--primary">
-                去看看那些被留下的痕迹
+                进入 Garden
               </Link>
-              <Link href="/about/system" className="anchor-action">
-                看看这些判断，长成了什么
+              <Link href="/about" className="anchor-action">
+                进入 About
               </Link>
             </div>
           </article>
 
           <section className="proof-group">
             <div className="group-head">
-              <h3 className="group-title">判断，被做成了可使用的工具</h3>
+              <h3 className="group-title">已经长出来的工具样本</h3>
               <p className="group-copy">
-                有些东西，如果只停留在理解里，很快又会散掉。做成工具，不是为了更复杂，而是为了让判断能在现实里被反复调用。
+                有些判断，如果只停留在理解里，很快又会散掉。做成工具，不是为了铺开，而是为了让它能在现实里被反复调用。
               </p>
             </div>
 
@@ -268,15 +267,28 @@ export default function Home() {
                   试一次更有边界的一天
                 </a>
               </article>
+
+              <article className="proof-card">
+                <div className="proof-topline">
+                  <h4 className="proof-title">赛博问卜</h4>
+                  <span className="proof-tag">Since 2026 · 外链工具组新成员</span>
+                </div>
+                <p className="proof-summary">借一面镜子，看清当下。</p>
+                <p className="proof-diary">
+                  有些时候，不是缺一个更响的答案，而是需要一个更轻的界面，把当下已经浮起来的感觉照清一点。
+                </p>
+                <a href="https://wenbu.cc" className="proof-link" target="_blank" rel="noopener noreferrer">
+                  借这面镜子看一眼现在
+                </a>
+              </article>
             </div>
           </section>
 
           <section className="daily-proof">
             <div className="group-head">
-              <h3 className="group-title">还有一些变化，不长在作品里，长在日常里</h3>
+              <h3 className="group-title">已经长回日常的部分</h3>
               <div className="section-copy">
-                <p>开始长期跑步。开始持续写作。开始做工具。开始把混乱一点点整理成秩序。</p>
-                <p>它们不一定显眼，但它们比“看起来很厉害”更真实。</p>
+                <p>不是所有扎根都会先长成作品。有些更先长回身体、节奏和日常。</p>
               </div>
             </div>
 
@@ -302,48 +314,66 @@ export default function Home() {
 
           <section className="entry-panel">
             <div className="group-head">
-              <h3 className="group-title">真实入口</h3>
+              <h3 className="group-title">从哪里进入 slowroot</h3>
               <p className="group-copy">
-                如果你想看 slowroot 是怎样一点点长出来的，可以从这些真实入口进去。
+                如果你现在想进入 slowroot，可以从这四个入口开始。它们各自负责不同的部分。
               </p>
-            </div>
-
-            <div className="section-copy">
-              <p>如果你想先分清 slowroot 现在已经长出来的两棵主干，可以先从这里看它们各自负责什么。</p>
-              <p>Garden 让人重新站稳，并长出判断；Library 留下值得保留的东西；Practice 检验什么最终在现实里站住。</p>
             </div>
 
             <div className="comparison-grid">
               <article className="comparison-card">
-                <div className="comparison-label">Library</div>
+                <div className="comparison-label">Garden</div>
                 <p className="comparison-text">
-                  <strong>Library 管留下了什么</strong>
+                  <strong>重新站稳，并长出判断</strong>
                 </p>
                 <p className="comparison-text">
-                  Library 收的是那些经过时间筛选之后，仍然值得留下的内容、方法与入口。
+                  Garden 负责那些让人先回来、再慢慢看清方向的方法、问题与思考。
                 </p>
               </article>
 
               <article className="comparison-card">
                 <div className="comparison-label">Practice</div>
                 <p className="comparison-text">
-                  <strong>Practice 管什么被验证过</strong>
+                  <strong>让判断进入现实，并接受验证</strong>
                 </p>
                 <p className="comparison-text">
-                  Practice 看的是哪些判断在现实里被反复检验之后，仍然成立。
+                  Practice 看的是哪些判断在身体、节奏、构建与现实里，被反复检验之后仍然成立。
+                </p>
+              </article>
+
+              <article className="comparison-card">
+                <div className="comparison-label">Library</div>
+                <p className="comparison-text">
+                  <strong>留下值得长期保留的内容、方法与入口</strong>
+                </p>
+                <p className="comparison-text">
+                  Library 收的是那些经过时间筛选之后，仍然值得留下来的书、工具、链接与方法。
+                </p>
+              </article>
+
+              <article className="comparison-card">
+                <div className="comparison-label">About</div>
+                <p className="comparison-text">
+                  <strong>理解 slowroot 的来路、边界与系统骨架</strong>
+                </p>
+                <p className="comparison-text">
+                  About 负责说明这套东西为什么会长出来，它想守住什么边界，现在又正处在哪个阶段。
                 </p>
               </article>
             </div>
 
             <div className="entry-actions">
               <Link href="/garden" className="entry-action entry-action--primary">
-                去看看那些被留下的痕迹
+                进入 Garden
               </Link>
-              <Link href="/garden/judgment" className="entry-action">
-                尝试一次有节奏的思考
+              <Link href="/practice" className="entry-action">
+                进入 Practice
               </Link>
-              <Link href="/about/system" className="entry-action">
-                如果你也想慢下来扎根
+              <Link href="/library" className="entry-action">
+                进入 Library
+              </Link>
+              <Link href="/about" className="entry-action">
+                进入 About
               </Link>
             </div>
           </section>

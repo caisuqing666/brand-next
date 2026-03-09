@@ -41,21 +41,41 @@ assert.doesNotMatch(
 const requiredCopy = [
   '这不是一组工具。这是一个',
   '从临在到生长的个人系统。',
+  'slowroot',
+  '我关心的，不是做得更多，而是先回到自己，再把判断慢慢长进生活里。',
+  '乱的时候，怎么先回到自己？',
+  '站稳以后，怎么判断方向？',
+  '知道方向后，今天先做哪一步？',
+  '经历过的事，怎么安放成结构？',
+  '结构稳定以后，会长成什么？',
+  '先回来',
+  '先定向',
+  '先收束',
+  '先安放',
+  '先长出来',
   '扎根',
   'slowroot.cc',
   'Since 2024 · still growing',
-  '判断，被做成了可使用的工具',
-  '真实入口',
-  'Garden 让人重新站稳，并长出判断；',
-  'Library 留下值得保留的东西；',
-  'Practice 检验什么最终在现实里站住。',
-  'Library 管留下了什么',
-  'Practice 管什么被验证过',
-  'Library 收的是那些经过时间筛选之后，仍然值得留下的内容、方法与入口。',
-  'Practice 看的是哪些判断在现实里被反复检验之后，仍然成立。',
+  '已经长出来的工具样本',
+  '已经长回日常的部分',
+  '从哪里进入 slowroot',
+  'Garden',
+  '重新站稳，并长出判断',
+  'Practice',
+  '让判断进入现实，并接受验证',
+  'Library',
+  '留下值得长期保留的内容、方法与入口',
+  'About',
+  '理解 slowroot 的来路、边界与系统骨架',
+  '进入 Garden',
+  '进入 Practice',
+  '进入 Library',
+  '进入 About',
   '变化',
   '身体会先知道',
   '不再那么乱了',
+  '赛博问卜',
+  '借一面镜子，看清当下。',
 ];
 
 for (const copy of requiredCopy) {
@@ -65,6 +85,30 @@ for (const copy of requiredCopy) {
     `Expected homepage copy "${copy}" in app/page.tsx`,
   );
 }
+
+assert.match(
+  pageSource,
+  /https:\/\/wenbu\.cc/,
+  'Expected homepage to link to wenbu.cc in the tool proofs',
+);
+
+assert.doesNotMatch(
+  pageSource,
+  /如果你想看 slowroot 是怎样一点点长出来的，可以从这些真实入口进去。/,
+  'Expected homepage to remove the repeated slowroot overview sentence from the entry panel',
+);
+
+assert.doesNotMatch(
+  pageSource,
+  /我关心的不是如何做得更多，而是如何先回到自己，并在行动中，长出更稳定的结构。/,
+  'Expected homepage hero note to use the tighter system phrasing',
+);
+
+assert.doesNotMatch(
+  pageSource,
+  /慢，是节奏；根，是结构。/,
+  'Expected homepage hero brand marker to be reduced to the brand name itself',
+);
 
 assert.doesNotMatch(
   pageSource,

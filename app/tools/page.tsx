@@ -4,41 +4,38 @@ const tools = [
   {
     title: '临在之锚',
     slug: 'presence',
+    href: 'https://metafield.cc',
     icon: '🌿',
-    description: '情绪降噪 / 回归中心',
-    question: '如何回到自己？',
-    featured: true,
+    description: '回到自己，重新站稳。',
+    cta: '进入工具',
   },
   {
-    title: 'Gallup 判断',
+    title: '盖洛普工具',
     slug: 'gallup',
+    href: 'https://gallup-tool.com',
     icon: '🧭',
-    description: '优势决策模型',
-    question: '如何用优势语言做判断？',
-    featured: true,
+    description: '让优势进入判断。',
+    cta: '进入工具',
   },
   {
-    title: 'EndOfDay',
+    title: '今日三件',
     slug: 'endofday',
+    href: 'https://endofday.site',
     icon: '📋',
-    description: '每日三件事',
-    question: '如何用最小行动推进长期目标？',
-    featured: true,
+    description: '把一天收束到三件事。',
+    cta: '进入工具',
   },
   {
     title: '赛博问卜',
     slug: 'oracle',
+    href: 'https://wenbu.cc',
     icon: '🔮',
-    description: '集体情绪感知',
-    question: '现在大家在关心什么？',
-    featured: false,
+    description: '借一面镜子，看清当下。',
+    cta: '进入工具',
   },
 ];
 
 export default function ToolsPage() {
-  const featuredTools = tools.filter(t => t.featured);
-  const otherTools = tools.filter(t => !t.featured);
-
   return (
     <div className="slowroot-container">
       {/* 导航栏 */}
@@ -64,44 +61,24 @@ export default function ToolsPage() {
           </p>
         </header>
 
-        {/* 核心工具 */}
         <section className="entry-cards">
           <div className="entry-grid">
-            {featuredTools.map((tool) => (
-              <Link 
-                key={tool.slug}
-                href={`/tools/${tool.slug}`} 
+            {tools.map((tool) => (
+              <a
+                key={tool.slug ?? tool.href}
+                href={tool.href}
                 className="entry-card"
+                target="_blank"
+                rel="noopener noreferrer"
               >
                 <div className="entry-icon">{tool.icon}</div>
                 <h2 className="entry-title">{tool.title}</h2>
-                <p className="entry-question">{tool.question}</p>
-                <span className="entry-ability">{tool.description}</span>
-              </Link>
+                <p className="entry-question">{tool.description}</p>
+                <span className="entry-ability">{tool.cta}</span>
+              </a>
             ))}
           </div>
         </section>
-
-        {/* 其他工具 */}
-        {otherTools.length > 0 && (
-          <section className="garden-section">
-            <div className="garden-header">
-              <span className="evidence-eyebrow">更多工具</span>
-            </div>
-            <div className="garden-grid">
-              {otherTools.map((tool) => (
-                <Link 
-                  key={tool.slug}
-                  href={`/tools/${tool.slug}`} 
-                  className="garden-node"
-                >
-                  <h3 className="node-title">{tool.icon} {tool.title}</h3>
-                  <p className="node-question">{tool.description}</p>
-                </Link>
-              ))}
-            </div>
-          </section>
-        )}
       </div>
 
       {/* 页脚 */}

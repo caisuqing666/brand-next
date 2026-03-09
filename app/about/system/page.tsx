@@ -197,6 +197,43 @@ export default function SystemPage() {
             </a>
           </section>
 
+          <section className="system-chapter">
+            <div className="system-prose">
+              <p>
+                但有些时刻，<br />
+                人不是马上需要更多分析，<br />
+                也不是马上需要下一步行动。<br />
+                只是需要一面镜子，<br />
+                先把自己此刻正在感受到的东西照出来。
+              </p>
+              <p>
+                所以我把赛博问卜也放进这组外链工具里。<br />
+                它不是为了神秘感，<br />
+                也不是为了替人决定。<br />
+                它更像一个轻一点的接口，<br />
+                让那些已经浮到心口、却还没被语言抓住的东西，<br />
+                有机会显形。
+              </p>
+              <p>
+                对我来说，<br />
+                它的价值不在于给出答案，<br />
+                而在于帮人看清当下。<br />
+                先看见，<br />
+                才谈得上判断。
+              </p>
+            </div>
+            <a
+              href="https://wenbu.cc"
+              className="system-tool-ref"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span className="tool-ref-label">赛博问卜</span>
+              <span className="tool-ref-hint">借一面镜子，看清当下。</span>
+              <span className="tool-ref-link">wenbu.cc →</span>
+            </a>
+          </section>
+
           {/* 章节四：结构与底盘 */}
           <section className="system-chapter">
             <div className="system-prose">

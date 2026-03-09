@@ -34,21 +34,4 @@ for (const routeFile of removedDynamicRoutes) {
   );
 }
 
-const growingRoutes = [
-  'app/about/now/page.tsx',
-  'app/about/constitution/page.tsx',
-  'app/tools/oracle/page.tsx',
-  'app/tools/archive/page.tsx',
-];
-
-for (const routeFile of growingRoutes) {
-  const source = read(routeFile);
-  assert.match(source, /GrowingPage/, `Expected ${routeFile} to use the shared growing page`);
-  assert.doesNotMatch(
-    source,
-    /getGrowingChildPage|getGrowingChildSlugs/,
-    `Expected ${routeFile} to be explicit instead of delegating through the old slug registry`,
-  );
-}
-
 console.log('growing pages wiring ok');
