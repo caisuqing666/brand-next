@@ -50,4 +50,16 @@ assert.equal(
   'Expected package-lock.json to avoid npmmirror resolved URLs so Vercel can install from the default npm registry globally',
 );
 
+assert.equal(
+  packageJson.dependencies?.canvas,
+  undefined,
+  'Expected canvas to avoid hard installation in dependencies because deployment should not fail on native addon install',
+);
+
+assert.match(
+  packageJson.optionalDependencies?.canvas ?? '',
+  /^\^?\d/,
+  'Expected canvas to be declared as an optional dependency so npm ci can continue if native install fails',
+);
+
 console.log('deployment config ok');
