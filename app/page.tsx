@@ -199,46 +199,46 @@ export default function Home() {
             </div>
 
             <div className="proof-grid">
-              <article className=”proof-card”>
-                <div className=”proof-topline”>
-                  <h4 className=”proof-title”>Gallup Tool</h4>
-                  <span className=”proof-tag”>Since 2025 · 持续迭代中</span>
+              <article className="proof-card">
+                <div className="proof-topline">
+                  <h4 className="proof-title">Gallup Tool</h4>
+                  <span className="proof-tag">Since 2025 · 持续迭代中</span>
                 </div>
-                <p className=”proof-summary”>让优势不再停留在报告里，而进入具体判断。</p>
-                <a href=”https://gallup-tool.com” className=”proof-link” target=”_blank” rel=”noopener noreferrer”>
+                <p className="proof-summary">让优势不再停留在报告里，而进入具体判断。</p>
+                <a href="https://gallup-tool.com" className="proof-link" target="_blank" rel="noopener noreferrer">
                   去看看它现在长成了什么
                 </a>
               </article>
 
-              <article className=”proof-card”>
-                <div className=”proof-topline”>
-                  <h4 className=”proof-title”>临在之锚</h4>
-                  <span className=”proof-tag”>v0.6 · 从日常里长出来</span>
+              <article className="proof-card">
+                <div className="proof-topline">
+                  <h4 className="proof-title">临在之锚</h4>
+                  <span className="proof-tag">v0.6 · 从日常里长出来</span>
                 </div>
-                <p className=”proof-summary”>在混乱之前，先回到自己。</p>
-                <a href=”https://metafield.cc” className=”proof-link” target=”_blank” rel=”noopener noreferrer”>
+                <p className="proof-summary">在混乱之前，先回到自己。</p>
+                <a href="https://metafield.cc" className="proof-link" target="_blank" rel="noopener noreferrer">
                   从这里停一下
                 </a>
               </article>
 
-              <article className=”proof-card”>
-                <div className=”proof-topline”>
-                  <h4 className=”proof-title”>Endofday</h4>
-                  <span className=”proof-tag”>Since 2026 · 第一个公开版本</span>
+              <article className="proof-card">
+                <div className="proof-topline">
+                  <h4 className="proof-title">Endofday</h4>
+                  <span className="proof-tag">Since 2026 · 第一个公开版本</span>
                 </div>
-                <p className=”proof-summary”>把行动收束到今天真正能成立的三件事。</p>
-                <a href=”https://endofday.site” className=”proof-link” target=”_blank” rel=”noopener noreferrer”>
+                <p className="proof-summary">把行动收束到今天真正能成立的三件事。</p>
+                <a href="https://endofday.site" className="proof-link" target="_blank" rel="noopener noreferrer">
                   试一次更有边界的一天
                 </a>
               </article>
 
-              <article className=”proof-card”>
-                <div className=”proof-topline”>
-                  <h4 className=”proof-title”>赛博问卜</h4>
-                  <span className=”proof-tag”>Since 2026 · 外链工具组新成员</span>
+              <article className="proof-card">
+                <div className="proof-topline">
+                  <h4 className="proof-title">赛博问卜</h4>
+                  <span className="proof-tag">Since 2026 · 外链工具组新成员</span>
                 </div>
-                <p className=”proof-summary”>借一面镜子，看清当下。</p>
-                <a href=”https://wenbu.cc” className=”proof-link” target=”_blank” rel=”noopener noreferrer”>
+                <p className="proof-summary">借一面镜子，看清当下。</p>
+                <a href="https://wenbu.cc" className="proof-link" target="_blank" rel="noopener noreferrer">
                   借这面镜子看一眼现在
                 </a>
               </article>
@@ -316,7 +316,7 @@ export default function Home() {
             <article className="comparison-card comparison-card--now">
               <div className="comparison-label">现在</div>
               <p className="comparison-text">
-                慢慢不再靠“更多”安抚自己。而是开始增加深度。跑得更稳，学得更透，也更知道什么不必抓住。
+                慢慢不再靠"更多"安抚自己。而是开始增加深度。跑得更稳，学得更透，也更知道什么不必抓住。
               </p>
             </article>
 
