@@ -9,6 +9,10 @@ const packageJson = JSON.parse(
 const vercelConfig = JSON.parse(
   fs.readFileSync(path.join(root, 'vercel.json'), 'utf8'),
 );
+const packageLockRaw = fs.readFileSync(
+  path.join(root, 'package-lock.json'),
+  'utf8',
+);
 
 assert.match(
   packageJson.packageManager ?? '',
@@ -38,6 +42,12 @@ assert.equal(
   fs.existsSync(path.join(root, 'pnpm-lock.yaml')),
   false,
   'Expected repo to avoid committing pnpm-lock.yaml when Vercel installs with npm',
+);
+
+assert.equal(
+  packageLockRaw.includes('registry.npmmirror.com'),
+  false,
+  'Expected package-lock.json to avoid npmmirror resolved URLs so Vercel can install from the default npm registry globally',
 );
 
 console.log('deployment config ok');
