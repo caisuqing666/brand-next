@@ -190,33 +190,6 @@ export default function Home() {
             </div>
           </header>
 
-          <article className="anchor-panel">
-            <div className="anchor-head">
-              <span className="panel-eyebrow">主锚点</span>
-              <span className="panel-tag">Since 2024 · still growing</span>
-            </div>
-
-            <div className="anchor-body">
-              <div className="anchor-main">
-                <h3 className="anchor-title">slowroot.cc</h3>
-                <p className="anchor-aside">从一个念头开始，到现在还没有停止长根。</p>
-              </div>
-              <div className="anchor-text">
-                <p>它不是名片，也不是内容合集。</p>
-                <p>它更像一个持续生长中的样本：判断如何落地，结构如何被使用，慢生长如何进入现实，都先在这里发生。</p>
-              </div>
-            </div>
-
-            <div className="anchor-actions">
-              <Link href="/garden" className="anchor-action anchor-action--primary">
-                进入 Garden
-              </Link>
-              <Link href="/about" className="anchor-action">
-                进入 About
-              </Link>
-            </div>
-          </article>
-
           <section className="proof-group">
             <div className="group-head">
               <h3 className="group-title">已经长出来的工具样本</h3>
@@ -226,58 +199,46 @@ export default function Home() {
             </div>
 
             <div className="proof-grid">
-              <article className="proof-card">
-                <div className="proof-topline">
-                  <h4 className="proof-title">Gallup Tool</h4>
-                  <span className="proof-tag">Since 2025 · 持续迭代中</span>
+              <article className=”proof-card”>
+                <div className=”proof-topline”>
+                  <h4 className=”proof-title”>Gallup Tool</h4>
+                  <span className=”proof-tag”>Since 2025 · 持续迭代中</span>
                 </div>
-                <p className="proof-summary">让优势不再停留在报告里，而进入具体判断。</p>
-                <p className="proof-diary">
-                  看过很多优势报告以后，我越来越在意的不是“你有什么”，而是“你怎么用它来判断”。
-                </p>
-                <a href="https://gallup-tool.com" className="proof-link" target="_blank" rel="noopener noreferrer">
+                <p className=”proof-summary”>让优势不再停留在报告里，而进入具体判断。</p>
+                <a href=”https://gallup-tool.com” className=”proof-link” target=”_blank” rel=”noopener noreferrer”>
                   去看看它现在长成了什么
                 </a>
               </article>
 
-              <article className="proof-card">
-                <div className="proof-topline">
-                  <h4 className="proof-title">临在之锚</h4>
-                  <span className="proof-tag">v0.6 · 从日常里长出来</span>
+              <article className=”proof-card”>
+                <div className=”proof-topline”>
+                  <h4 className=”proof-title”>临在之锚</h4>
+                  <span className=”proof-tag”>v0.6 · 从日常里长出来</span>
                 </div>
-                <p className="proof-summary">在混乱之前，先回到自己。</p>
-                <p className="proof-diary">
-                  很多时候，人不是不会做，而是还没回到自己。所以这个工具的起点，不是行动，而是停一下。
-                </p>
-                <a href="https://metafield.cc" className="proof-link" target="_blank" rel="noopener noreferrer">
+                <p className=”proof-summary”>在混乱之前，先回到自己。</p>
+                <a href=”https://metafield.cc” className=”proof-link” target=”_blank” rel=”noopener noreferrer”>
                   从这里停一下
                 </a>
               </article>
 
-              <article className="proof-card">
-                <div className="proof-topline">
-                  <h4 className="proof-title">Endofday</h4>
-                  <span className="proof-tag">Since 2026 · 第一个公开版本</span>
+              <article className=”proof-card”>
+                <div className=”proof-topline”>
+                  <h4 className=”proof-title”>Endofday</h4>
+                  <span className=”proof-tag”>Since 2026 · 第一个公开版本</span>
                 </div>
-                <p className="proof-summary">把行动收束到今天真正能成立的三件事。</p>
-                <p className="proof-diary">
-                  我曾经也试过把一天塞满。后来发现，真正让人稳下来的，不是做更多，而是只承诺那三件真正成立的事。
-                </p>
-                <a href="https://endofday.site" className="proof-link" target="_blank" rel="noopener noreferrer">
+                <p className=”proof-summary”>把行动收束到今天真正能成立的三件事。</p>
+                <a href=”https://endofday.site” className=”proof-link” target=”_blank” rel=”noopener noreferrer”>
                   试一次更有边界的一天
                 </a>
               </article>
 
-              <article className="proof-card">
-                <div className="proof-topline">
-                  <h4 className="proof-title">赛博问卜</h4>
-                  <span className="proof-tag">Since 2026 · 外链工具组新成员</span>
+              <article className=”proof-card”>
+                <div className=”proof-topline”>
+                  <h4 className=”proof-title”>赛博问卜</h4>
+                  <span className=”proof-tag”>Since 2026 · 外链工具组新成员</span>
                 </div>
-                <p className="proof-summary">借一面镜子，看清当下。</p>
-                <p className="proof-diary">
-                  有些时候，不是缺一个更响的答案，而是需要一个更轻的界面，把当下已经浮起来的感觉照清一点。
-                </p>
-                <a href="https://wenbu.cc" className="proof-link" target="_blank" rel="noopener noreferrer">
+                <p className=”proof-summary”>借一面镜子，看清当下。</p>
+                <a href=”https://wenbu.cc” className=”proof-link” target=”_blank” rel=”noopener noreferrer”>
                   借这面镜子看一眼现在
                 </a>
               </article>
@@ -312,71 +273,20 @@ export default function Home() {
             <p>有些东西后来长回人本身。</p>
           </div>
 
-          <section className="entry-panel">
-            <div className="group-head">
-              <h3 className="group-title">从哪里进入 slowroot</h3>
-              <p className="group-copy">
-                如果你现在想进入 slowroot，可以从这四个入口开始。它们各自负责不同的部分。
-              </p>
-            </div>
-
-            <div className="comparison-grid">
-              <article className="comparison-card">
-                <div className="comparison-label">Garden</div>
-                <p className="comparison-text">
-                  <strong>重新站稳，并长出判断</strong>
-                </p>
-                <p className="comparison-text">
-                  Garden 负责那些让人先回来、再慢慢看清方向的方法、问题与思考。
-                </p>
-              </article>
-
-              <article className="comparison-card">
-                <div className="comparison-label">Practice</div>
-                <p className="comparison-text">
-                  <strong>让判断进入现实，并接受验证</strong>
-                </p>
-                <p className="comparison-text">
-                  Practice 看的是哪些判断在身体、节奏、构建与现实里，被反复检验之后仍然成立。
-                </p>
-              </article>
-
-              <article className="comparison-card">
-                <div className="comparison-label">Library</div>
-                <p className="comparison-text">
-                  <strong>留下值得长期保留的内容、方法与入口</strong>
-                </p>
-                <p className="comparison-text">
-                  Library 收的是那些经过时间筛选之后，仍然值得留下来的书、工具、链接与方法。
-                </p>
-              </article>
-
-              <article className="comparison-card">
-                <div className="comparison-label">About</div>
-                <p className="comparison-text">
-                  <strong>理解 slowroot 的来路、边界与系统骨架</strong>
-                </p>
-                <p className="comparison-text">
-                  About 负责说明这套东西为什么会长出来，它想守住什么边界，现在又正处在哪个阶段。
-                </p>
-              </article>
-            </div>
-
-            <div className="entry-actions">
-              <Link href="/garden" className="entry-action entry-action--primary">
-                进入 Garden
-              </Link>
-              <Link href="/practice" className="entry-action">
-                进入 Practice
-              </Link>
-              <Link href="/library" className="entry-action">
-                进入 Library
-              </Link>
-              <Link href="/about" className="entry-action">
-                进入 About
-              </Link>
-            </div>
-          </section>
+          <div className="entry-actions">
+            <Link href="/garden" className="entry-action entry-action--primary">
+              进入 Garden
+            </Link>
+            <Link href="/practice" className="entry-action">
+              进入 Practice
+            </Link>
+            <Link href="/tools" className="entry-action">
+              进入 Tools
+            </Link>
+            <Link href="/about" className="entry-action">
+              进入 About
+            </Link>
+          </div>
         </div>
       </section>
 
