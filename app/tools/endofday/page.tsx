@@ -10,7 +10,6 @@ export default function EndOfDayPage() {
             <Link href="/garden" className="nav-link">花园</Link>
             <Link href="/practice" className="nav-link">实践</Link>
             <Link href="/tools" className="nav-link active">工具</Link>
-            <Link href="/library" className="nav-link">资源</Link>
             <Link href="/about" className="nav-link">关于</Link>
           </div>
         </div>
@@ -31,6 +30,8 @@ export default function EndOfDayPage() {
           </header>
 
           <article className="note-body">
+            <p>有一次用 openclaw 抓热词，看到了一个词：jinri-todo。旁边带着一句话——不是做更多，而是做更少。</p>
+            <p>我盯着这句话看了很久。那太像我自己了。</p>
             <p>
               有段时间，我每天早上打开清单，上面二十几件事。<br />
               看着它，心先沉了一截。

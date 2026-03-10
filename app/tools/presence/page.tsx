@@ -10,7 +10,6 @@ export default function PresenceToolPage() {
             <Link href="/garden" className="nav-link">花园</Link>
             <Link href="/practice" className="nav-link">实践</Link>
             <Link href="/tools" className="nav-link active">工具</Link>
-            <Link href="/library" className="nav-link">资源</Link>
             <Link href="/about" className="nav-link">关于</Link>
           </div>
         </div>
@@ -30,16 +29,11 @@ export default function PresenceToolPage() {
           </header>
 
           <article className="note-body">
-            <p>很多工具，都在帮助人做更多事。</p>
-            <p>提醒、规划、追踪、归类、提效。它们当然有用。</p>
-            <p>人在很多时候真正缺的，不是再多一个工具。</p>
-            <p>
-              而是在已经很乱的时候，怎么先回来。
-            </p>
-            <p>
-              不是回来做事。不是回来解决问题。也不是回来继续优化自己。只是先回到自己这里，回到当下，回到那个还没有被信息、情绪和惯性完全带走的位置。
-            </p>
-            <p>这也是我后来做「临在之锚」的原因。</p>
+            <p>工作遇到一些困境的时候，我发现自己的思维很乱。</p>
+            <p>不是不知道该做什么。是脑子里同时有太多声音，每一个都很急，但没有一个说得清楚。</p>
+            <p>那时候我意识到，我需要的不是一个答案，而是先停下来——先让自己安顿好，再决定怎么办。</p>
+            <p>那个"先安顿好自己"的需求，让我开始想一件事：有没有什么东西，能帮我在混乱里先找到一个落脚点？不是解决问题，不是给方向，只是先把自己接回来。</p>
+            <p>后来做出来的，就是「临在之锚」。</p>
 
             <hr />
 

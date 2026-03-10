@@ -9,7 +9,7 @@ export default function Home() {
           <div className="nav-links">
             <Link href="/garden" className="nav-link">花园</Link>
             <Link href="/practice" className="nav-link">实践</Link>
-            <Link href="/library" className="nav-link">资源</Link>
+            <Link href="/tools" className="nav-link">工具</Link>
             <Link href="/about" className="nav-link">关于</Link>
           </div>
         </div>
@@ -17,9 +17,9 @@ export default function Home() {
 
       <section className="hero">
         <h1 className="hero-title">
-          这不是一组工具。这是一个
+          慢下来的人，
           <br />
-          从临在到生长的个人系统。
+          也在生长。
         </h1>
         <div className="hero-meta">
           <p className="hero-brand">slowroot</p>
@@ -73,9 +73,9 @@ export default function Home() {
             <div className="node-number">01</div>
             <h3 className="node-title">临在 / 降噪</h3>
             <p className="node-question">乱的时候，怎么先回到自己？</p>
-            <a href="https://metafield.cc" className="node-link" target="_blank" rel="noopener noreferrer">
+            <Link href="/tools/presence" className="node-link">
               进入临在之锚 →
-            </a>
+            </Link>
             <span className="node-hint">先回来</span>
           </div>
 
@@ -93,9 +93,9 @@ export default function Home() {
             <div className="node-number">03</div>
             <h3 className="node-title">执行 / 收束</h3>
             <p className="node-question">知道方向后，今天先做哪一步？</p>
-            <a href="https://endofday.site" className="node-link" target="_blank" rel="noopener noreferrer">
+            <Link href="/tools/endofday" className="node-link">
               进入执行之锚 →
-            </a>
+            </Link>
             <span className="node-hint">先收束</span>
           </div>
 
@@ -123,9 +123,9 @@ export default function Home() {
               <h3 className="mobile-title">临在 / 降噪</h3>
             </div>
             <p className="mobile-question">乱的时候，怎么先回到自己？</p>
-            <a href="https://metafield.cc" className="mobile-link" target="_blank" rel="noopener noreferrer">
+            <Link href="/tools/presence" className="mobile-link">
               进入临在之锚 →
-            </a>
+            </Link>
             <span className="mobile-hint">先回来</span>
           </div>
 
@@ -147,9 +147,9 @@ export default function Home() {
               <h3 className="mobile-title">执行 / 收束</h3>
             </div>
             <p className="mobile-question">知道方向后，今天先做哪一步？</p>
-            <a href="https://endofday.site" className="mobile-link" target="_blank" rel="noopener noreferrer">
+            <Link href="/tools/endofday" className="mobile-link">
               进入执行之锚 →
-            </a>
+            </Link>
             <span className="mobile-hint">先收束</span>
           </div>
 

@@ -40,7 +40,6 @@ export default function GardenThemePage({
             <Link href="/garden" className="nav-link active">花园</Link>
             <Link href="/practice" className="nav-link">实践</Link>
             <Link href="/tools" className="nav-link">工具</Link>
-            <Link href="/library" className="nav-link">资源</Link>
             <Link href="/about" className="nav-link">关于</Link>
           </div>
         </div>

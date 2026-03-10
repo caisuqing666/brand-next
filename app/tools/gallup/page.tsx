@@ -10,7 +10,6 @@ export default function GallupToolPage() {
             <Link href="/garden" className="nav-link">花园</Link>
             <Link href="/practice" className="nav-link">实践</Link>
             <Link href="/tools" className="nav-link active">工具</Link>
-            <Link href="/library" className="nav-link">资源</Link>
             <Link href="/about" className="nav-link">关于</Link>
           </div>
         </div>
@@ -31,29 +30,12 @@ export default function GallupToolPage() {
           </header>
 
           <article className="note-body">
-            <p>
-              很长一段时间里，我对"理解自己"这件事，是失望的。
-            </p>
-            <p>
-              不是因为方法不对，<br />
-              而是因为——理解之后，生活并没有变轻。
-            </p>
-            <p>
-              我知道自己的优势，<br />
-              知道为什么会累，<br />
-              知道问题"出在哪里"。
-            </p>
-            <p>
-              但每一次卡住，真正困扰我的从来不是情绪，<br />
-              而是一个更冷静、也更残酷的问题：
-            </p>
-            <blockquote>
-              现在，我到底该不该继续？
-            </blockquote>
-            <p>
-              大多数性格工具，擅长解释你是谁。<br />
-              但很少有工具，愿意回答：你该往哪走。
-            </p>
+            <p>临在之锚做好之后，我有一段时间只是停着。</p>
+            <p>那段时间，我有种以前一直往前冲时没有过的感觉——内心充盈。不是做了什么，是停下来了。</p>
+            <p>然后我开始意识到一件事：有些位置，不是用来往前冲的。它是节点。需要停下来，看清楚，再决定要不要走、怎么走。</p>
+            <p>一味往前，不一定是更正确的选择。有时候停下来、慢一点、休整一下，从总体上看反而走得更远。</p>
+            <p>而"知道什么时候该停、什么时候该走"——这就是判断。</p>
+            <p>我一直用盖洛普的优势框架理解自己。但我越来越觉得，优势不应该只停留在理解层面，它应该进入判断：我现在是在用优势，还是在透支？这是坚持，还是消耗？</p>
             <p>于是我开始重做盖洛普。</p>
             <p>
               不再围绕"你是一个怎样的人"，<br />
