@@ -103,8 +103,6 @@ export default function PracticePage() {
             <h1 className="note-title">练习与验证</h1>
             <div className="note-intro">
               <p>很多东西不是想明白的，而是在反复练习、反复修正里，慢慢长出来的。</p>
-              <p>我更在意的，不是说过什么，也不是计划过什么，而是哪些东西在现实里真的站住了，哪些判断经过时间、反馈和波动之后，仍然成立。</p>
-              <p>这里留下的，不是设想，而是那些在现实里被反复检验过、仍然成立的东西。</p>
             </div>
           </header>
 
@@ -113,17 +111,7 @@ export default function PracticePage() {
               {branches.map((branch) => (
                 <Link key={branch.href} href={branch.href} className="garden-node note-section-card">
                   <h2 className="node-title note-section-title">{branch.title}</h2>
-                  <div className="note-section-copy">
-                    {branch.body.map((paragraph) => (
-                      <p key={paragraph} className="node-question">{paragraph}</p>
-                    ))}
-                  </div>
-                  <p className="note-section-label">{branch.kept}</p>
-                  <div className="note-section-copy">
-                    {branch.summary.map((paragraph) => (
-                      <p key={paragraph} className="node-question">{paragraph}</p>
-                    ))}
-                  </div>
+                  <p className="node-question">{branch.body[branch.body.length - 1]}</p>
                 </Link>
               ))}
             </div>
@@ -166,9 +154,7 @@ export default function PracticePage() {
       </main>
 
       <footer className="footer">
-        <p className="footer-text">
-          判断优先于行动。结构优先于工具。时间优先于速度。
-        </p>
+        <p className="footer-text">slowroot</p>
       </footer>
     </div>
   );

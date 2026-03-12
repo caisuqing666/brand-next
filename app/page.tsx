@@ -24,22 +24,38 @@ export default function Home() {
         <div className="hero-meta">
           <p className="hero-brand">slowroot</p>
           <p className="hero-note">
-            我关心的，不是做得更多，而是先回到自己，再把判断慢慢长进生活里。
+            我后来越来越在意的，
+            <br />
+            不是怎样做得更多，
+            <br />
+            而是怎样先不把自己带偏。
+            <br />
+            先回来，先站稳，
+            <br />
+            再让真正成立的东西，慢慢长进生活里。
           </p>
         </div>
       </section>
 
       <section className="journey-section">
         <div className="journey-header">
-          <span className="journey-eyebrow">从回到自己，到长进生活里。</span>
+          <span className="journey-eyebrow">判断顺序</span>
+          <div className="section-copy" style={{ maxWidth: '34rem', margin: '1rem auto 0', textAlign: 'center' }}>
+            <p>后来我慢慢发现，很多东西不能跳着来。</p>
+            <p>顺序一乱，人就很容易又回到原来的惯性里。</p>
+            <p>不是信息不够，而是人在判断之前，已经不在自己这里了。</p>
+            <p>先回来。再站稳。然后才谈判断、行动和生长。</p>
+          </div>
         </div>
 
         <div className="journey-ellipse">
           <div className="journey-center">
             <p className="journey-center-text">
-              先回到自己，
+              先回来，
               <br />
-              再慢慢长进生活里。
+              先站稳，
+              <br />
+              再长进现实。
             </p>
           </div>
 
@@ -71,48 +87,43 @@ export default function Home() {
 
           <div className="journey-node journey-node--top journey-node--inner-start">
             <div className="node-number">01</div>
-            <h3 className="node-title">临在 / 降噪</h3>
+            <h3 className="node-title">临在</h3>
             <p className="node-question">乱的时候，怎么先回到自己？</p>
             <Link href="/tools/presence" className="node-link">
               进入临在之锚 →
             </Link>
-            <span className="node-hint">先回来</span>
           </div>
 
           <div className="journey-node journey-node--top-right journey-node--inner-guide">
             <div className="node-number">02</div>
-            <h3 className="node-title">判断 / 定向</h3>
+            <h3 className="node-title">判断</h3>
             <p className="node-question">站稳以后，怎么判断方向？</p>
             <Link href="/garden/judgment" className="node-link">
               进入判断之锚 →
             </Link>
-            <span className="node-hint">先定向</span>
           </div>
 
           <div className="journey-node journey-node--bottom-right journey-node--hinge">
             <div className="node-number">03</div>
-            <h3 className="node-title">执行 / 收束</h3>
+            <h3 className="node-title">执行</h3>
             <p className="node-question">知道方向后，今天先做哪一步？</p>
             <Link href="/tools/endofday" className="node-link">
               进入执行之锚 →
             </Link>
-            <span className="node-hint">先收束</span>
           </div>
 
           <div className="journey-node journey-node--bottom-left journey-node--outer-ground">
             <div className="node-number">04</div>
-            <h3 className="node-title">结构 / 安放</h3>
+            <h3 className="node-title">结构</h3>
             <p className="node-question">经历过的事，怎么安放成结构？</p>
-            <a href="#rooted" className="node-link">看那些已经开始扎根的部分 →</a>
-            <span className="node-hint">先安放</span>
+            <a href="#evidence" className="node-link">看它们怎样在现实里安放下来 →</a>
           </div>
 
           <div className="journey-node journey-node--top-left journey-node--outer-grow">
             <div className="node-number">05</div>
-            <h3 className="node-title">生长 / 展开</h3>
+            <h3 className="node-title">生长</h3>
             <p className="node-question">结构稳定以后，会长成什么？</p>
-            <a href="#change" className="node-link">看这些东西如何慢慢长回人身上 →</a>
-            <span className="node-hint">先长出来</span>
+            <a href="#evidence" className="node-link">看这些判断如何慢慢长进现实 →</a>
           </div>
         </div>
 
@@ -120,81 +131,79 @@ export default function Home() {
           <div className="mobile-node mobile-node--inner-start">
             <div className="mobile-header">
               <span className="mobile-number">01</span>
-              <h3 className="mobile-title">临在 / 降噪</h3>
+              <h3 className="mobile-title">临在</h3>
             </div>
             <p className="mobile-question">乱的时候，怎么先回到自己？</p>
             <Link href="/tools/presence" className="mobile-link">
               进入临在之锚 →
             </Link>
-            <span className="mobile-hint">先回来</span>
           </div>
 
           <div className="mobile-node mobile-node--inner-guide">
             <div className="mobile-header">
               <span className="mobile-number">02</span>
-              <h3 className="mobile-title">判断 / 定向</h3>
+              <h3 className="mobile-title">判断</h3>
             </div>
             <p className="mobile-question">站稳以后，怎么判断方向？</p>
             <Link href="/garden/judgment" className="mobile-link">
               进入判断之锚 →
             </Link>
-            <span className="mobile-hint">先定向</span>
           </div>
 
           <div className="mobile-node mobile-node--hinge">
             <div className="mobile-header">
               <span className="mobile-number">03</span>
-              <h3 className="mobile-title">执行 / 收束</h3>
+              <h3 className="mobile-title">执行</h3>
             </div>
             <p className="mobile-question">知道方向后，今天先做哪一步？</p>
             <Link href="/tools/endofday" className="mobile-link">
               进入执行之锚 →
             </Link>
-            <span className="mobile-hint">先收束</span>
           </div>
 
           <div className="mobile-node mobile-node--outer-ground">
             <div className="mobile-header">
               <span className="mobile-number">04</span>
-              <h3 className="mobile-title">结构 / 安放</h3>
+              <h3 className="mobile-title">结构</h3>
             </div>
             <p className="mobile-question">经历过的事，怎么安放成结构？</p>
-            <a href="#rooted" className="mobile-link">看那些已经开始扎根的部分 →</a>
-            <span className="mobile-hint">先安放</span>
+            <a href="#evidence" className="mobile-link">看它们怎样在现实里安放下来 →</a>
           </div>
 
           <div className="mobile-node mobile-node--outer-grow">
             <div className="mobile-header">
               <span className="mobile-number">05</span>
-              <h3 className="mobile-title">生长 / 展开</h3>
+              <h3 className="mobile-title">生长</h3>
             </div>
             <p className="mobile-question">结构稳定以后，会长成什么？</p>
-            <a href="#change" className="mobile-link">看这些东西如何慢慢长回人身上 →</a>
-            <span className="mobile-hint">先长出来</span>
+            <a href="#evidence" className="mobile-link">看这些判断如何慢慢长进现实 →</a>
           </div>
         </div>
       </section>
 
-      <section id="rooted" className="rooted-section">
+      <section id="evidence" className="rooted-section">
         <div className="section-shell">
           <div className="section-kicker">
-            <span className="section-number">04</span>
-            <span className="section-name">扎根</span>
+            <span className="section-number">03</span>
+            <span className="section-name">现实证据</span>
           </div>
 
           <header className="section-intro">
-            <h2 className="section-title">扎根</h2>
+            <h2 className="section-title">现实证据</h2>
             <div className="section-copy">
-              <p>想清楚，不是终点。slowroot 也必须进入现实。</p>
-              <p>这里不是成果陈列。这里只放那些已经开始进入现实的部分。</p>
+              <p>判断落地之后，它需要在现实里有一个可以反复回来的入口。</p>
+              <p>不是所有东西，都会先长成作品。</p>
+              <p>先长出来的，也可能只是一个入口。</p>
             </div>
           </header>
 
           <section className="proof-group">
             <div className="group-head">
-              <h3 className="group-title">已经长出来的工具样本</h3>
+              <span className="evidence-eyebrow">现实接口</span>
+              <h3 className="group-title">已经长出来的入口</h3>
               <p className="group-copy">
-                有些判断，如果只停留在理解里，很快又会散掉。做成工具，不是为了铺开，而是为了让它能在现实里被反复调用。
+                有些判断，如果只停留在理解里，很快又会散掉。
+                它需要在现实里有一个反复回来的入口。
               </p>
             </div>
 
@@ -249,7 +258,8 @@ export default function Home() {
             <div className="group-head">
               <h3 className="group-title">已经长回日常的部分</h3>
               <div className="section-copy">
-                <p>不是所有扎根都会先长成作品。有些更先长回身体、节奏和日常。</p>
+                <p>不是所有真正成立的东西，都会先长成作品。</p>
+                <p>有些更早长回身体、节奏和日常。</p>
               </div>
             </div>
 
@@ -269,85 +279,13 @@ export default function Home() {
           </section>
 
           <div className="transition-quote">
-            <p>有些东西先长成作品。</p>
+            <p>有些东西先长成入口。</p>
             <p>有些东西后来长回人本身。</p>
           </div>
 
-          <div className="entry-actions">
-            <Link href="/garden" className="entry-action entry-action--primary">
-              进入 Garden
-            </Link>
-            <Link href="/practice" className="entry-action">
-              进入 Practice
-            </Link>
-            <Link href="/tools" className="entry-action">
-              进入 Tools
-            </Link>
-            <Link href="/about" className="entry-action">
-              进入 About
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section id="change" className="change-section">
-        <div className="section-shell section-shell--narrow">
-          <div className="section-kicker">
-            <span className="section-number">05</span>
-            <span className="section-name">变化</span>
-          </div>
-
-          <header className="section-intro section-intro--soft">
-            <h2 className="section-title">变化</h2>
-            <div className="section-copy">
-              <p>不是突然想通了什么。也不是终于成为了另一个人。</p>
-              <p>更多时候，变化来得很慢。慢到一开始几乎察觉不到。只是有一天回头看，才发现：一些旧的用力方式，真的在慢慢退下去。</p>
-            </div>
-          </header>
-
-          <div className="comparison-grid">
-            <article className="comparison-card">
-              <div className="comparison-label">以前</div>
-              <p className="comparison-text">
-                试图通过增加宽度，来缓解焦虑。跑得更多，学得更杂，抓得更紧。
-              </p>
-            </article>
-
-            <article className="comparison-card comparison-card--now">
-              <div className="comparison-label">现在</div>
-              <p className="comparison-text">
-                慢慢不再靠"更多"安抚自己。而是开始增加深度。跑得更稳，学得更透，也更知道什么不必抓住。
-              </p>
-            </article>
-
-            <article className="comparison-card">
-              <div className="comparison-label">以前</div>
-              <p className="comparison-text">
-                一乱，就想赶快做点什么。仿佛只要继续动，混乱就会自己过去。
-              </p>
-            </article>
-
-            <article className="comparison-card comparison-card--now">
-              <div className="comparison-label">现在</div>
-              <p className="comparison-text">
-                开始知道，停一下不是退后。有些时候，先判断，比先行动更重要。
-              </p>
-            </article>
-          </div>
-
-          <section className="body-panel">
-            <h3 className="group-title">身体会先知道</h3>
-            <div className="section-copy">
-              <p>有些变化，不是先发生在语言里。而是先发生在身体里。</p>
-              <p>呼吸不再悬在胸腔，而是慢慢沉到了腹部。</p>
-              <p>那种稳，不是说服自己之后才有的。是跑过很多公里、经历很多现实之后，身体先不慌了，心才慢慢跟上。</p>
-              <p>很多路，不是想通的。是一步一步，跑进呼吸里以后，才真正明白。</p>
-            </div>
-          </section>
-
           <div className="closing-line">
-            <p>原来变化，不一定是巨大的。</p>
-            <p>它也可以只是 不再那么乱了。</p>
+            <p>我想留下的，不是更多内容，</p>
+            <p>而是那些经过现实之后，仍然成立的判断。</p>
           </div>
         </div>
       </section>

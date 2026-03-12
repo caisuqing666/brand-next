@@ -7,14 +7,14 @@ const toolsSource = fs.readFileSync(path.join(root, 'app/tools/page.tsx'), 'utf8
 
 assert.match(
   toolsSource,
-  /我为自己做的一些工具，如果你也需要，可以用。/,
-  'Expected tools page subtitle to keep the simpler invitation copy',
+  /不是为了做更多。/,
+  'Expected tools page subtitle to introduce the structural purpose of the tools page',
 );
 
 assert.doesNotMatch(
   toolsSource,
-  /安静，不营销。/,
-  'Expected tools page subtitle to remove the explicit tone statement',
+  /我为自己做的一些工具，如果你也需要，可以用。/,
+  'Expected tools page to remove the old generic invitation copy',
 );
 
 const presenceIndex = toolsSource.indexOf("slug: 'presence'");
@@ -45,14 +45,30 @@ assert.match(
 );
 
 const requiredCopy = [
+  '工具不是主角。',
+  '它们只是入口。',
+  '先回来',
+  '再定向',
+  '再收束',
+  '先照见',
   'title: \'临在之锚\'',
-  'description: \'回到自己，重新站稳。\'',
+  'step: \'01\'',
+  'anchor: \'先回来\'',
+  'description: \'乱的时候，先回到自己。\'',
   'title: \'盖洛普工具\'',
-  'description: \'让优势进入判断。\'',
+  'step: \'02\'',
+  'anchor: \'再定向\'',
+  'description: \'把优势语言带进真实判断。\'',
   'title: \'今日三件\'',
-  'description: \'把一天收束到三件事。\'',
+  'step: \'03\'',
+  'anchor: \'再收束\'',
+  'description: \'知道方向后，把一天收束到真正成立的三件事。\'',
   'title: \'赛博问卜\'',
-  'description: \'借一面镜子，看清当下。\'',
+  'step: \'04\'',
+  'anchor: \'先照见\'',
+  'description: \'有些时候，不是立刻分析，而是先把当下照出来。\'',
+  '这些工具不替人决定。',
+  '它们只是把判断重新接回现实。',
   '进入工具',
 ];
 
@@ -66,8 +82,8 @@ for (const copy of requiredCopy) {
 
 assert.doesNotMatch(
   toolsSource,
-  /不是为了贴标签|不是做更多|它不急着替你解释世界|先帮你从混乱里退回来/,
-  'Expected tools page to remove the longer helper paragraphs from the landing cards',
+  /我为自己做的一些工具/,
+  'Expected tools page to stop framing itself as a generic personal tool collection',
 );
 
 console.log('tools page order ok');

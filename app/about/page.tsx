@@ -2,27 +2,19 @@ import Link from 'next/link';
 
 const keywords = [
   {
-    title: 'INFJ · 洞察与行动',
-    body: '用理解和共情去看见别人，也看见自己。',
-  },
-  {
     title: '跑步 10,000+ 公里',
-    body: '完成过上海马拉松，从零开始，把坚持变成日常。',
+    body: '不是展示意志力，而是训练一种长期节奏。节奏比决心更可靠，这是跑出来的判断。',
   },
   {
     title: '46 岁开始学编程',
     body: '不是为了转行，而是为了不放弃自己，用技术做自己的产品。',
-  },
-  {
-    title: '学习型人格',
-    body: '盖洛普前五：思维 / 学习 / 分析 / 搜集 / 完美主义版「精进派」。',
   },
 ];
 
 const timeline = [
   {
     year: '2020 年 · 跑步拯救了我',
-    body: '口罩年，不间断训练，完成人生第一个全程马拉松。42.195 公里的每一步，都在提醒我：再普通的人，也可以通过坚持改变自己。',
+    body: '口罩年，不间断训练，完成人生第一个全程马拉松。那是我第一次发现，节奏比意志力更可靠。慢一点，但不停，和咬牙冲刺，是两种完全不同的事。',
   },
   {
     year: '2018～2023 · 回望内心',
@@ -100,9 +92,6 @@ export default function AboutPage() {
             <p style={{ fontSize: '0.78rem', letterSpacing: '0.08em', color: 'var(--structure-muted)', marginBottom: '0.75rem' }}>
               关键词
             </p>
-            <h2 style={{ fontSize: '1.35rem', marginBottom: '1.25rem', color: 'var(--structure)' }}>
-              洞察、行动、学习、创作、陪伴
-            </h2>
             <div style={{ display: 'grid', gap: '1rem' }}>
               {keywords.map((item) => (
                 <div key={item.title}>
@@ -156,7 +145,7 @@ export default function AboutPage() {
             }}
           >
             <h2 style={{ fontSize: '1.1rem', marginBottom: '1rem', color: 'var(--structure)', fontWeight: 600 }}>
-              温柔又坚定的成长信念
+              我后来越来越确认的几件事
             </h2>
             <div style={{ color: 'var(--structure-soft)', lineHeight: 2, fontSize: '1rem' }}>
               {beliefs.map((item) => (
@@ -166,18 +155,6 @@ export default function AboutPage() {
           </div>
 
           <div style={{ marginBottom: '3rem' }}>
-            <Link
-              href="/about/system"
-              style={{
-                display: 'inline-block',
-                color: 'var(--accent)',
-                textDecoration: 'none',
-                marginBottom: '0.75rem',
-              }}
-            >
-              → 去看 slowroot 的系统骨架
-            </Link>
-            <br />
             <Link
               href="/about/now"
               style={{
@@ -212,26 +189,36 @@ export default function AboutPage() {
                 不追求增加。只确认方向。
               </p>
             </div>
-            <Link
-              href="/about/constitution"
-              style={{
-                display: 'inline-block',
-                color: 'var(--structure-muted)',
-                textDecoration: 'none',
-                marginTop: '1.5rem',
-                fontSize: '0.9rem',
-              }}
-            >
-              → 完整版
-            </Link>
+            <div style={{ marginTop: '1.5rem', display: 'flex', gap: '1.5rem' }}>
+              <Link
+                href="/about/constitution"
+                style={{
+                  display: 'inline-block',
+                  color: 'var(--structure-muted)',
+                  textDecoration: 'none',
+                  fontSize: '0.9rem',
+                }}
+              >
+                → 完整版
+              </Link>
+              <Link
+                href="/about/system"
+                style={{
+                  display: 'inline-block',
+                  color: 'var(--structure-muted)',
+                  textDecoration: 'none',
+                  fontSize: '0.9rem',
+                }}
+              >
+                → 系统骨架
+              </Link>
+            </div>
           </div>
         </section>
       </div>
 
       <footer className="footer">
-        <p className="footer-text">
-          判断优先于行动。结构优先于工具。时间优先于速度。
-        </p>
+        <p className="footer-text">slowroot</p>
       </footer>
     </div>
   );

@@ -43,7 +43,6 @@ export default function LibraryPage() {
             <Link href="/garden" className="nav-link">花园</Link>
             <Link href="/practice" className="nav-link">实践</Link>
             <Link href="/tools" className="nav-link">工具</Link>
-            <Link href="/library" className="nav-link active">资源</Link>
             <Link href="/about" className="nav-link">关于</Link>
           </div>
         </div>
@@ -61,9 +60,6 @@ export default function LibraryPage() {
             <h1 className="note-title">资源</h1>
             <div className="note-intro">
               <p>我留下这些，不是为了收藏更多。而是因为在一次次使用、阅读、返回之后，它们仍然没有被删掉。</p>
-              <p>有些东西当时有用，过一阵就失效了。有些东西看起来很多，却并不会真正进入生活。</p>
-              <p>我更在意的是：它是否值得留下，是否能在需要的时候，把我带回一个更清楚的位置。</p>
-              <p>这里的内容，不是按数量整理的。而是按时间筛过之后，慢慢留下来的那一部分。</p>
             </div>
           </header>
 
@@ -72,13 +68,7 @@ export default function LibraryPage() {
               {branches.map((branch) => (
                 <Link key={branch.slug} href={`/library/${branch.slug}`} className="garden-node note-section-card">
                   <h2 className="node-title note-section-title">{branch.title}</h2>
-                  <div className="note-section-copy">
-                    {branch.intro.map((paragraph) => (
-                      <p key={paragraph} className="node-question">{paragraph}</p>
-                    ))}
-                  </div>
-                  <p className="note-section-label">{branch.kept}</p>
-                  <p className="node-question">{branch.summary}</p>
+                  <p className="node-question">{branch.intro[0]}</p>
                 </Link>
               ))}
             </div>
@@ -92,9 +82,7 @@ export default function LibraryPage() {
       </main>
 
       <footer className="footer">
-        <p className="footer-text">
-          判断优先于行动。结构优先于工具。时间优先于速度。
-        </p>
+        <p className="footer-text">slowroot</p>
       </footer>
     </div>
   );

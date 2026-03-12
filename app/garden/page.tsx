@@ -23,25 +23,25 @@ const gardenNodes = [
     title: '临在归位',
     slug: 'presence',
     question: '如何在判断之前，先把自己放回当下？',
-    category: '位置',
+    hint: '先乱的，通常是心',
   },
   {
     title: '判断优先',
     slug: 'judgment',
     question: '如何在复杂中做出清晰判断？',
-    category: '判断',
+    hint: '先偏的，通常是方向',
   },
   {
     title: '执行边界',
     slug: 'action',
     question: '如何把判断转成可执行、可完成的动作？',
-    category: '行动',
+    hint: '先散的，通常是行动',
   },
   {
     title: '复盘沉淀',
     slug: 'review',
     question: '如何让经验变成可复用的资产？',
-    category: '沉淀',
+    hint: '先丢的，通常是经验',
   },
 ];
 
@@ -72,8 +72,6 @@ export default function GardenPage() {
             <h1 className="note-title">花园</h1>
             <div className="note-intro">
               <p>这里不是为了更快得出答案，而是为了回到一个还能继续生长的位置。</p>
-              <p>有些判断还没有定型，有些结构还在慢慢长出来，有些问题也不会立刻结束。</p>
-              <p>但正是在这里，很多东西开始有了根。</p>
             </div>
           </header>
 
@@ -87,7 +85,7 @@ export default function GardenPage() {
                 >
                   <h2 className="node-title note-section-title">{node.title}</h2>
                   <p className="node-question">{node.question}</p>
-                  <p className="note-section-label">这一层处理的是：{node.category}</p>
+                  <p className="note-section-label">{node.hint}</p>
                 </Link>
               ))}
             </div>
@@ -117,9 +115,7 @@ export default function GardenPage() {
       </main>
 
       <footer className="footer">
-        <p className="footer-text">
-          判断优先于行动。结构优先于工具。时间优先于速度。
-        </p>
+        <p className="footer-text">slowroot</p>
       </footer>
     </div>
   );
