@@ -1,15 +1,17 @@
 import type { NextConfig } from "next";
+import { setupDevPlatform } from "@cloudflare/next-on-pages/next-dev";
+
+// 本地开发时启用 Cloudflare 平台模拟
+if (process.env.NODE_ENV === "development") {
+  setupDevPlatform();
+}
 
 const nextConfig: NextConfig = {
-  /* config options here */
   reactStrictMode: true,
-  outputFileTracingRoot: process.cwd(),
   eslint: {
-    // 在构建时忽略 ESLint 错误（临时措施，建议后续修复再改回）
     ignoreDuringBuilds: true,
   },
   typescript: {
-    // 在构建时忽略 TypeScript 错误（可选，建议修复后移除）
     ignoreBuildErrors: false,
   },
 };
