@@ -1,13 +1,32 @@
 // app/layout.tsx
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import './globals.css';
 import './tailwind.css';
 import './brand.css';
+import { getSiteConfigByHost, getSiteUrlByHost } from '../lib/siteConfig';
 
-export const metadata: Metadata = {
-  title: 'slowroot',
-  description: 'slowroot：一个关于结构、判断与慢生长的个人实验场。',
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const requestHeaders = await headers();
+  const host = requestHeaders.get('x-forwarded-host') ?? requestHeaders.get('host');
+  const protocol = requestHeaders.get('x-forwarded-proto');
+  const siteConfig = getSiteConfigByHost(host);
+
+  const metadata: Metadata = {
+    title: siteConfig.title,
+    description: siteConfig.description,
+    metadataBase: new URL(getSiteUrlByHost(host, protocol)),
+  };
+
+  if (siteConfig.googleSiteVerification) {
+    metadata.verification = {
+      google: siteConfig.googleSiteVerification,
+    };
+  }
+
+  return metadata;
+}
 
 export default function RootLayout({
   children,
@@ -16,7 +35,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="zh-CN">
-      <body>{children}</body>
+      <body>
+        {children}
+        <SpeedInsights />
+      </body>
     </html>
   );
 }

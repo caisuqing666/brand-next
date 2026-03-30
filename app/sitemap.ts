@@ -1,7 +1,12 @@
 import { MetadataRoute } from 'next'
+import { headers } from 'next/headers'
+import { getSiteUrlByHost } from '../lib/siteConfig'
 
-export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://slowroot.cc'
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const requestHeaders = await headers()
+  const host = requestHeaders.get('x-forwarded-host') ?? requestHeaders.get('host')
+  const protocol = requestHeaders.get('x-forwarded-proto')
+  const baseUrl = getSiteUrlByHost(host, protocol)
 
   return [
     {
