@@ -19,6 +19,15 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: false,
   },
+  webpack: (config) => {
+    // edge runtime 下的 @resvg/resvg-wasm 依赖需要 WebAssembly 支持
+    config.experiments = {
+      ...config.experiments,
+      asyncWebAssembly: true,
+      layers: true,
+    };
+    return config;
+  },
 };
 
 export default nextConfig;

@@ -1,51 +1,22 @@
 import Link from 'next/link';
+import { getAllNodes, STATUS_LABEL } from '@/lib/garden';
 
-const recentNotes = [
-  {
-    slug: 'barbell-and-zhongyong',
-    date: '02-28',
-    title: '我用了十年，才明白这两句话说的是同一件事',
-  },
-  {
-    slug: 'system-processing',
-    date: '02-25',
-    title: '不是情绪处理，是系统处理',
-  },
-  {
-    slug: 'living-with-problems',
-    date: '02-15',
-    title: '带着问题继续走，本身就是能力',
-  },
+const rootedEntries = [
+  { slug: 'presence', title: '临在归位', hint: '先乱的，通常是心' },
+  { slug: 'judgment', title: '判断优先', hint: '先偏的，通常是方向' },
+  { slug: 'action', title: '执行边界', hint: '先散的，通常是行动' },
+  { slug: 'review', title: '复盘沉淀', hint: '先丢的，通常是经验' },
 ];
 
-const gardenNodes = [
-  {
-    title: '临在归位',
-    slug: 'presence',
-    question: '如何在判断之前，先把自己放回当下？',
-    hint: '先乱的，通常是心',
-  },
-  {
-    title: '判断优先',
-    slug: 'judgment',
-    question: '如何在复杂中做出清晰判断？',
-    hint: '先偏的，通常是方向',
-  },
-  {
-    title: '执行边界',
-    slug: 'action',
-    question: '如何把判断转成可执行、可完成的动作？',
-    hint: '先散的，通常是行动',
-  },
-  {
-    title: '复盘沉淀',
-    slug: 'review',
-    question: '如何让经验变成可复用的资产？',
-    hint: '先丢的，通常是经验',
-  },
-];
+function formatDate(iso: string): string {
+  if (!iso) return '';
+  const [, m, d] = iso.split('-');
+  return m && d ? `${m}-${d}` : iso;
+}
 
 export default function GardenPage() {
+  const nodes = getAllNodes();
+
   return (
     <div className="slowroot-container">
       <nav className="navbar">
@@ -71,42 +42,48 @@ export default function GardenPage() {
             <p className="note-kicker">Garden · 花园</p>
             <h1 className="note-title">花园</h1>
             <div className="note-intro">
-              <p>这里不是为了更快得出答案，而是为了回到一个还能继续生长的位置。</p>
+              <p>这里是练习场，不是展览馆。</p>
+              <p>冒芽、长着、成立的，都一起放在时间里。</p>
             </div>
           </header>
 
           <section className="garden-section">
-            <div className="garden-grid note-section-grid">
-              {gardenNodes.map((node) => (
+            <div className="seed-list">
+              {nodes.length === 0 && (
+                <p className="seed-empty">土还没翻。很快会有第一个冒芽。</p>
+              )}
+              {nodes.map((node) => (
                 <Link
                   key={node.slug}
-                  href={`/garden/${node.slug}`}
-                  className="garden-node note-section-card"
+                  href={`/garden/seed/${node.slug}`}
+                  className="seed-item"
                 >
-                  <h2 className="node-title note-section-title">{node.title}</h2>
-                  <p className="node-question">{node.question}</p>
-                  <p className="note-section-label">{node.hint}</p>
+                  <div className="seed-item-meta">
+                    <span className="seed-item-date">{formatDate(node.updated)}</span>
+                    <span className={`seed-status seed-status--${node.status}`}>
+                      {STATUS_LABEL[node.status]}
+                    </span>
+                  </div>
+                  <h2 className="seed-item-title">{node.title}</h2>
+                  {node.summary && (
+                    <p className="seed-item-summary">{node.summary}</p>
+                  )}
                 </Link>
               ))}
             </div>
           </section>
 
-          <section className="garden-section" style={{ marginTop: '2.35rem' }}>
-            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', marginBottom: '1.25rem' }}>
-              <h2 className="section-label" style={{ fontSize: '0.78rem', letterSpacing: '0.08em', color: 'var(--structure-muted)', opacity: 0.75 }}>最近笔记</h2>
-              <Link href="/garden/notes" style={{ fontSize: '0.82rem', color: 'var(--accent-on-light)', textDecoration: 'none' }}>全部 →</Link>
-            </div>
-            <div className="notes-list">
-              {recentNotes.map((note) => (
+          <section className="garden-section" style={{ marginTop: '3rem' }}>
+            <h2 className="seed-section-label">已长成的几块地</h2>
+            <div className="rooted-list">
+              {rootedEntries.map((entry) => (
                 <Link
-                  key={note.slug}
-                  href={`/garden/notes/${note.slug}`}
-                  className="notes-item"
+                  key={entry.slug}
+                  href={`/garden/${entry.slug}`}
+                  className="rooted-item"
                 >
-                  <span className="notes-item-date">{note.date}</span>
-                  <span className="notes-item-right">
-                    <span className="notes-item-title">{note.title}</span>
-                  </span>
+                  <span className="rooted-item-title">{entry.title}</span>
+                  <span className="rooted-item-hint">{entry.hint}</span>
                 </Link>
               ))}
             </div>

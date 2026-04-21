@@ -130,12 +130,17 @@ body::before {
 }
 
 .hero-title {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(1.25rem, 4vw, 2.2rem);
   font-weight: 600;
   color: var(--structure);
-  line-height: 1.34;
+  line-height: 1.65;
   margin-bottom: 1.2rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.03em;
+  width: 100%;
+  max-width: none;
+  text-align: left;
+  white-space: pre-wrap;
+  word-break: keep-all;
 }
 
 .hero-subtitle {
@@ -863,6 +868,12 @@ body::before {
 @media (max-width: 768px) {
   .nav-links {
     display: none;
+  }
+
+  .hero-title {
+    font-size: 1.25rem;
+    width: 100%;
+    max-width: none;
   }
   
   .hero {
@@ -2040,5 +2051,215 @@ body::before {
   .practice-log-tag {
     display: inline;
     margin-right: 0.5rem;
+  }
+}
+
+/* -----------------------------------------------------------
+   Garden seeds（时间花园）
+   ----------------------------------------------------------- */
+
+.seed-list {
+  display: flex;
+  flex-direction: column;
+  border-top: 1px solid var(--border);
+}
+
+.seed-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+  padding: 1.4rem 0.25rem;
+  border-bottom: 1px solid var(--border);
+  color: inherit;
+  text-decoration: none;
+  transition: background 0.25s ease, padding 0.25s ease;
+}
+
+.seed-item:hover {
+  background: rgba(255, 253, 248, 0.55);
+  padding-left: 0.75rem;
+}
+
+.seed-item-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.78rem;
+  color: var(--structure-muted);
+  letter-spacing: 0.04em;
+}
+
+.seed-item-date {
+  font-variant-numeric: tabular-nums;
+}
+
+.seed-item-title {
+  font-size: 1.2rem;
+  line-height: 1.45;
+  color: var(--structure);
+  font-weight: 500;
+}
+
+.seed-item-summary {
+  color: var(--structure-soft);
+  line-height: 1.75;
+  font-size: 0.98rem;
+}
+
+.seed-empty {
+  padding: 2rem 0;
+  color: var(--structure-muted);
+  font-style: italic;
+}
+
+/* 状态标签 */
+.seed-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.1rem 0.55rem;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  color: var(--structure-soft);
+}
+
+.seed-status--seed {
+  color: #7a6b4a;
+  border-color: rgba(170, 140, 90, 0.35);
+  background: rgba(250, 240, 220, 0.65);
+}
+
+.seed-status--growing {
+  color: #4f6b4a;
+  border-color: rgba(100, 140, 100, 0.35);
+  background: rgba(232, 243, 228, 0.7);
+}
+
+.seed-status--rooted {
+  color: #4b439f;
+  border-color: rgba(95, 87, 198, 0.35);
+  background: rgba(235, 232, 250, 0.7);
+}
+
+.seed-section-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  color: var(--structure-muted);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.rooted-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+
+.rooted-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem 1.1rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.25s ease, border-color 0.25s ease;
+}
+
+.rooted-item:hover {
+  transform: translateY(-1px);
+  border-color: rgba(95, 87, 198, 0.35);
+}
+
+.rooted-item-title {
+  color: var(--structure);
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.rooted-item-hint {
+  color: var(--structure-muted);
+  font-size: 0.85rem;
+}
+
+@media (max-width: 640px) {
+  .rooted-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -----------------------------------------------------------
+   首页「花园最近在长的」一行
+   ----------------------------------------------------------- */
+
+.garden-latest {
+  max-width: 42rem;
+  margin: -1rem auto 2.5rem;
+  padding: 0 1.5rem;
+}
+
+.garden-latest-link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 253, 248, 0.55);
+  color: inherit;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background 0.25s ease, border-color 0.25s ease;
+}
+
+.garden-latest-link:hover {
+  background: rgba(255, 253, 248, 0.9);
+  border-color: rgba(95, 87, 198, 0.3);
+}
+
+.garden-latest-label {
+  color: var(--structure-muted);
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+}
+
+.garden-latest-title {
+  color: var(--structure);
+  flex: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.garden-latest-date {
+  color: var(--structure-muted);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .garden-latest {
+    margin: -0.5rem auto 2rem;
+  }
+  .garden-latest-link {
+    flex-wrap: wrap;
+    border-radius: 16px;
+    padding: 0.85rem 1rem;
+  }
+  .garden-latest-title {
+    white-space: normal;
+    flex-basis: 100%;
+    order: 3;
+  }
+  .garden-latest-date {
+    order: 2;
+    margin-left: auto;
   }
 }

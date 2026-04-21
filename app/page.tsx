@@ -1,6 +1,9 @@
 import Link from 'next/link';
+import { getRecentNodes, STATUS_LABEL } from '@/lib/garden';
 
 export default function Home() {
+  const latestNode = getRecentNodes(1)[0];
+
   return (
     <div className="slowroot-container">
       <nav className="navbar">
@@ -17,9 +20,9 @@ export default function Home() {
 
       <section className="hero">
         <h1 className="hero-title">
-          慢下来的人，
+          有很长一段时间，我越努力，
           <br />
-          也在生长。
+          越不知道自己在积累什么。
         </h1>
         <div className="hero-meta">
           <p className="hero-brand">slowroot</p>
@@ -36,6 +39,19 @@ export default function Home() {
           </p>
         </div>
       </section>
+
+      {latestNode && (
+        <section className="garden-latest">
+          <Link href={`/garden/seed/${latestNode.slug}`} className="garden-latest-link">
+            <span className="garden-latest-label">花园最近在长的</span>
+            <span className={`seed-status seed-status--${latestNode.status}`}>
+              {STATUS_LABEL[latestNode.status]}
+            </span>
+            <span className="garden-latest-title">{latestNode.title}</span>
+            <span className="garden-latest-date">{latestNode.updated}</span>
+          </Link>
+        </section>
+      )}
 
       <section className="journey-section">
         <div className="journey-header">
