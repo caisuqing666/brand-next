@@ -35,3 +35,6 @@
 ## Environment & Configuration
 - Copy secrets into `.env.local` (e.g., `NEXT_PUBLIC_SUPABASE_URL` and `NEXT_PUBLIC_SUPABASE_ANON_KEY`); never commit this file.
 - When adding new env vars, document their purpose in `README.md` and gate usage with null checks.
+
+## 操作原则
+- **删除文件必须用 `trash` 命令，严禁使用 `rm`**（`trash` 移入回收站，可恢复；`rm` 永久删除，不可逆）
